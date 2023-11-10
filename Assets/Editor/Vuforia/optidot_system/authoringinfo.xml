@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="27.0" toolVersion="10.18.5">
+<ModelTarget name="optidot_system" targetId="a13bc3658a814bf3a2928a030fd01e52" version="14.0" toolVersion="10.18.5" bbox="-0.120156 -0.320195 -0.079120 0.120195 0.080195 0.061183" previewImage="a13bc3658a814bf3a2928a030fd01e52_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="optidot_systems_assembly" assemblyId="4f4805cf75a44205af2b0a1b84a6daf2">
+<Part name="optidot_system" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="0.0517877 -0.0122734 0.618478" rotation="AD: 0.324226 1.90569 -1.11065 170.311" image="optidot_system_GuideView_0000.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="0.046469 -0.0952914 0.772085" rotation="AD: 0.997831 0.370118 -0.220299 122.689" image="optidot_system_GuideView_0001.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="-0.093131 -0.066815 0.74245" rotation="AD: 0.985306 -0.55606 0.445148 114.052" image="optidot_system_GuideView_0002.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0003" translation="-0.0307101 0.0410031 0.62128" rotation="AD: -0.686046 2.49975 -0.791365 189.163" image="optidot_system_GuideView_0003.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>
