@@ -19,6 +19,7 @@ public class ShowSlider : MonoBehaviour
     void OnMouseDown()
     {
         // this object was clicked - do something
+
         Debug.Log("this object was clicked");
     }
 }
