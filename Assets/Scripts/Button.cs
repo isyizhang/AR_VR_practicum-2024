@@ -13,6 +13,7 @@ public class Button : MonoBehaviour, Interactable
     public Transform text;
 
     public GameObject lightBeam;
+
     private bool isPressed = false;
 
     public void OnPointerDown()
@@ -22,16 +23,18 @@ public class Button : MonoBehaviour, Interactable
             transform.position += new Vector3(0, -0.005f, 0.009f);
             isPressed = true;
 
-            if (!lightBeam.activeSelf)
+            if (lightBeam)
             {
-                lightBeam.SetActive(true);
-                Debug.Log("active");
+                if (!lightBeam.activeSelf)
+                {
+                    lightBeam.SetActive(true);
+                }
+                else
+                {
+                    lightBeam.SetActive(false);
+                }
             }
-            else
-            {
-                lightBeam.SetActive(false);
-                Debug.Log("Inactive");
-            }
+
         }
     }
     public void OnPointerUp(bool isInside)
@@ -56,5 +59,10 @@ public class Button : MonoBehaviour, Interactable
     public string GetText()
     {
         return text.GetComponent<TextMeshPro>().text;
+    }
+
+    public void AddListener(UnityAction call)
+    {
+        this.onPointerDownUpEvent.AddListener(call);
     }
 }
