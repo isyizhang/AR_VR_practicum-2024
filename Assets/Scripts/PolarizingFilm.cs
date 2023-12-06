@@ -13,6 +13,8 @@ public class PolarizingFilm : MonoBehaviour
 
     public int value; // value for level of taste
 
+    public Transform typeOfTaste;
+
     public Transform text;
 
     public GameObject slider;
@@ -49,6 +51,8 @@ public class PolarizingFilm : MonoBehaviour
         slider.transform.SetParent(canvasObject.transform, false);
         sliderInteractable = slider.GetComponent<Slider>();
         sliderInteractable.value = value;
+        GameObject sliderText = slider.transform.Find("Text").gameObject;
+        sliderText.GetComponent<TextMeshProUGUI>().SetText(typeOfTaste.GetComponent<TextMeshPro>().text);
     }
 
     private void DestroySlider()
