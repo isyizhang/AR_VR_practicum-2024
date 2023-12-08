@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 29642c7588ce3844ba9d3cf9b3d961d2, type: 2}
+  - {fileID: 2100000, guid: 20ce83800c2694f9f8bd872526b38a0f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -194,7 +194,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 936426dfab1d794419b6f17eca289f9c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 29642c7588ce3844ba9d3cf9b3d961d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 20ce83800c2694f9f8bd872526b38a0f, type: 2}
     - target: {fileID: 919132149155446097, guid: 936426dfab1d794419b6f17eca289f9c, type: 3}
       propertyPath: m_Name
       value: cone

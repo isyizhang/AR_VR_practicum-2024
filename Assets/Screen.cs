@@ -16,25 +16,34 @@ public class Screen : MonoBehaviour
     public int b2;
     public int b3;
 
-    PolarizingFilm film11;
-    PolarizingFilm film12;
-    PolarizingFilm film13;
-    PolarizingFilm film21;
-    PolarizingFilm film22;
-    PolarizingFilm film23;
+    private PolarizingFilm film11;
+    private PolarizingFilm film12;
+    private PolarizingFilm film13;
+    private PolarizingFilm film21;
+    private PolarizingFilm film22;
+    private PolarizingFilm film23;
 
+    private Button buttonSweetness;
+    private Button buttonSalinity;
+    private Button buttonGreasiness;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject filmGameObject11 = GameObject.Find("PolarizingFilm_1_1");
         film11 = filmGameObject11.GetComponent<PolarizingFilm>();
+        GameObject button11 = filmGameObject11.transform.Find("ButtonSweetness").gameObject;
+        buttonSweetness = button11.GetComponent<Button>();
 
         GameObject filmGameObject12 = GameObject.Find("PolarizingFilm_1_2");
         film12 = filmGameObject12.GetComponent<PolarizingFilm>();
+        GameObject button12 = filmGameObject12.transform.Find("ButtonSalinity").gameObject;
+        buttonSalinity = button12.GetComponent<Button>();
 
         GameObject filmGameObject13 = GameObject.Find("PolarizingFilm_1_3");
         film13 = filmGameObject13.GetComponent<PolarizingFilm>();
+        GameObject button13 = filmGameObject13.transform.Find("ButtonGreasiness").gameObject;
+        buttonGreasiness = button13.GetComponent<Button>();
 
         GameObject filmGameObject21 = GameObject.Find("PolarizingFilm_2_1");
         film21 = filmGameObject21.GetComponent<PolarizingFilm>();
@@ -50,9 +59,21 @@ public class Screen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        a1 = film11.Value;
-        a2 = film12.Value;
-        a3 = film13.Value;
+        if (buttonSweetness.lightBeam.activeSelf)
+        {
+            a1 = film11.Value;
+        }
+        else { a1 = 0; }
+        if (buttonSalinity.lightBeam.activeSelf)
+        {
+            a2 = film12.Value;
+        }
+        else { a2 = 0; }
+        if (buttonGreasiness.lightBeam.activeSelf)
+        {
+            a3 = film13.Value;
+        }
+        else { a3 = 0; }
         b1 = film21.Value;
         b2 = film22.Value;
         b3 = film23.Value;

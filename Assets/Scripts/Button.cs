@@ -14,6 +14,8 @@ public class Button : MonoBehaviour, Interactable
 
     public GameObject lightBeam;
 
+    public bool isLightButton;
+
     private bool isPressed = false;
 
     public void OnPointerDown()
@@ -23,7 +25,7 @@ public class Button : MonoBehaviour, Interactable
             transform.position += new Vector3(0, -0.005f, 0.009f);
             isPressed = true;
 
-            if (lightBeam)
+            if (lightBeam && isLightButton)
             {
                 if (!lightBeam.activeSelf)
                 {

@@ -816,7 +816,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   text: {fileID: 1067009893}
-  lightBeam: {fileID: 0}
+  lightBeam: {fileID: 168312666}
+  isLightButton: 0
 --- !u!1 &228349882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 954293124092660360, guid: d7048b8f20b704807817c310a39c3414, type: 3}
@@ -839,6 +840,7 @@ MonoBehaviour:
       m_Calls: []
   text: {fileID: 1094439470}
   lightBeam: {fileID: 1963550093}
+  isLightButton: 1
 --- !u!1 &324373580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1026,7 @@ MonoBehaviour:
       m_Calls: []
   text: {fileID: 1366404221}
   lightBeam: {fileID: 168312666}
+  isLightButton: 1
 --- !u!1 &398249039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1198,7 @@ MonoBehaviour:
       m_Calls: []
   text: {fileID: 1569953649}
   lightBeam: {fileID: 0}
+  isLightButton: 0
 --- !u!1 &437678655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1399,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   text: {fileID: 1986147464}
-  lightBeam: {fileID: 0}
+  lightBeam: {fileID: 1963550093}
+  isLightButton: 0
 --- !u!21 &472506748
 Material:
   serializedVersion: 6
@@ -2686,7 +2691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017946968}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -2.6, y: 0.88, z: 3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2917,6 +2922,7 @@ MonoBehaviour:
       m_Calls: []
   text: {fileID: 1560370477}
   lightBeam: {fileID: 0}
+  isLightButton: 0
 --- !u!1001 &1317731978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3625,6 +3631,7 @@ MonoBehaviour:
       m_Calls: []
   text: {fileID: 1899442604}
   lightBeam: {fileID: 592786541}
+  isLightButton: 1
 --- !u!1 &1604640310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,6 +3778,7 @@ MonoBehaviour:
       m_Calls: []
   text: {fileID: 385491130}
   lightBeam: {fileID: 0}
+  isLightButton: 0
 --- !u!1001 &1743253073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3881,7 +3889,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   text: {fileID: 1886930606}
-  lightBeam: {fileID: 0}
+  lightBeam: {fileID: 592786541}
+  isLightButton: 0
 --- !u!1001 &1828140806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4816,13 +4825,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950781138}
-  m_LocalRotation: {x: 0.08506189, y: 0.36631107, z: -0.101615995, w: 0.9210076}
-  m_LocalPosition: {x: -0.2484, y: 0.1266, z: -0.1782}
+  m_LocalRotation: {x: 0.1509343, y: -0, z: -0, w: 0.9885438}
+  m_LocalPosition: {x: 0, y: 0.2293, z: -0.2908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 13.364, y: 42.513, z: -7.373}
+  m_LocalEulerAnglesHint: {x: 17.362, y: 0, z: 0}
 --- !u!114 &1950781145
 MonoBehaviour:
   m_ObjectHideFlags: 0
