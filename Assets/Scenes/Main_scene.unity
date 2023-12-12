@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8dc4730f569700849b57905017ee73f0, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -621,24 +621,24 @@ MonoBehaviour:
   PreviewVisible: 0
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: optidot_system
+  mTrackableName: optidot_system_2
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/optidot_system.xml
-  mBaseSize: 0.24035099
-  mAspectRatioXY: 1.6658554
-  mAspectRatioXZ: 0.58374214
+  mDataSetPath: Vuforia/optidot_system_2.xml
+  mBaseSize: 0.240234
+  mAspectRatioXY: 1.6659757
+  mAspectRatioXZ: 0.5837101
   mShowBoundingBox: 0
   mOverrideSnappingPose: 0
-  mBBoxMin: {x: -0.120156, y: -0.320195, z: -0.07912}
-  mBBoxMax: {x: 0.120195, y: 0.080195, z: 0.061183}
-  mPreviewImage: {fileID: 2800000, guid: c1c81b2f9b234705aebd11d39cd5dfeb, type: 3}
-  mLength: 0.24035099
-  mWidth: 0.40039
-  mHeight: 0.140303
+  mBBoxMin: {x: -0.120117, y: -0.320112, z: -0.079037}
+  mBBoxMax: {x: 0.120117, y: 0.080112, z: 0.06119}
+  mPreviewImage: {fileID: 2800000, guid: 82fe7f175cae4908ab4a42a3d43095f8, type: 3}
+  mLength: 0.240234
+  mWidth: 0.400224
+  mHeight: 0.140227
   m3DGuideViewModel: {fileID: 0}
   m2DGuideViewImage: {fileID: 0}
-  mGuideViewDisplayMode: 0
-  m2DGuideViewMaterial: {fileID: 472506748}
+  mGuideViewDisplayMode: 2
+  m2DGuideViewMaterial: {fileID: 1412372104}
   m3DGuideViewMaterial: {fileID: 0}
   mSelectedGuideView: GuideView_0000
   mMotionHint: 1
@@ -664,10 +664,10 @@ Transform:
   - {fileID: 62535681}
   - {fileID: 203270620}
   - {fileID: 1946156247}
+  - {fileID: 1832716281}
   - {fileID: 878672981}
   - {fileID: 5405665962993237217}
   - {fileID: 1931590919}
-  - {fileID: 1832716281}
   - {fileID: 1828140807}
   - {fileID: 1550046392}
   - {fileID: 1344938567}
@@ -688,10 +688,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 130402425}
   mHiddenRoot: {fileID: 0}
-  mTargetName: optidot_system
-  mDatasetName: Vuforia/optidot_system.xml
+  mTargetName: optidot_system_2
+  mDatasetName: Vuforia/optidot_system_2.xml
   mCastedBehaviour: {fileID: 130402425}
-  mModelScale: {x: 0.24035099, y: 0.40039, z: 0.140303}
+  mModelScale: {x: 0.240234, y: 0.400224, z: 0.140227}
   mModelTargetPreview: {fileID: 0}
 --- !u!224 &136609779 stripped
 RectTransform:
@@ -1748,33 +1748,6 @@ MonoBehaviour:
   text: {fileID: 1986147464}
   lightBeam: {fileID: 1963550093}
   isLightButton: 0
---- !u!21 &472506748
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit/Transparent
-  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1001 &527781436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2709,7 +2682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145755917529895715, guid: fa55b030095d07548a26e3b5283fbd98, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8145755917529895715, guid: fa55b030095d07548a26e3b5283fbd98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4388,6 +4361,33 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
   m_PrefabInstance: {fileID: 527781436}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1412372104
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Unlit/Transparent
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1436747062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,7 +5849,7 @@ Transform:
   m_Children:
   - {fileID: 1337758879}
   m_Father: {fileID: 130402426}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1832716282
 MeshCollider:
@@ -6344,7 +6344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145755917529895715, guid: fa55b030095d07548a26e3b5283fbd98, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8145755917529895715, guid: fa55b030095d07548a26e3b5283fbd98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7088,7 +7088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145755917529895715, guid: fa55b030095d07548a26e3b5283fbd98, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8145755917529895715, guid: fa55b030095d07548a26e3b5283fbd98, type: 3}
       propertyPath: m_LocalPosition.x

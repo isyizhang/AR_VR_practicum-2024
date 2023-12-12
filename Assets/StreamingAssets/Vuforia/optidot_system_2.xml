@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="optidot_system_2" motionHint="adaptive" trackingMode="car" optimizeTrackingFor="default"/>
+
+</Tracking>
+
+<Assembly name="optidot_system_2s_assembly" assemblyId="680b3ee89c8b43819f54dec6dcb7f7f4">
+<Part name="optidot_system_2" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="0.0344133 -0.00230908 0.689731" rotation="AD: 0.41511 1.97673 -1.05337 168.907" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="0.157888 -0.0351601 0.823442" rotation="AD: 0.995213 0.505852 -0.23844 135.321" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="-0.0552376 -0.0906043 0.67214" rotation="AD: 0.998326 -0.357038 0.195928 126.129" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>
