@@ -11,6 +11,10 @@ public class Dialogue : MonoBehaviour
     public GameObject Text2;
     public GameObject Text3;
     public GameObject Table1;
+
+    public GameObject Text4;
+    public GameObject Text5;
+    public GameObject Text6;
     void Start()
     {
         Value = 0f;
@@ -27,12 +31,21 @@ public class Dialogue : MonoBehaviour
         Script3.TextSetActive(Value); // Use the public method made in the last Script
         TextGuidance Script3_1 = Table1.GetComponent<TextGuidance>(); // Get the script of the text
         Script3_1.TextSetActive(Value); // Use the public method made in the last Script
-
-        if (Value == 2)
+        TextGuidance Script4 = Text4.GetComponent<TextGuidance>(); // Get the script of the text
+        Script4.TextSetActive(Value); // Use the public method made in the last Script
+        TextGuidance Script5 = Text5.GetComponent<TextGuidance>(); // Get the script of the text
+        Script5.TextSetActive(Value); // Use the public method made in the last Script
+        TextGuidance Script6 = Text6.GetComponent<TextGuidance>(); // Get the script of the text
+        Script6.TextSetActive(Value); // Use the public method made in the last Script
+        if (Value == 2 || Value == 5)
         {
             ShowArrowAt(-0.1f, 0.075f, 0.05f);
         }
-        else if (Value == 3)
+        else if (Value == 4)
+        {
+            ShowArrowAt(-0.1f, 0.075f, 0.3f);
+        }
+        else if (Value == 3 || Value == 6)
         {
             ShowArrowAt(-0.1f, 0.075f, 0.2f);
         }
