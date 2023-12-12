@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -79,6 +80,8 @@ public class Screen : MonoBehaviour
         b3 = film23.Value;
         value = DotProduct(a1, a2, a3, b1, b2, b3);
         text.GetComponent<TextMeshPro>().text = value.ToString();
+        int alpha = value * 255 / 300;
+        text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
     }
 
     private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
