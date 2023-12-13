@@ -65,7 +65,6 @@ public class PolarizingFilm : MonoBehaviour
         slider = GameObject.Find("Slider2D(Clone)");
         if (slider != null)
         {
-            Debug.Log(slider);
             GameObject.Destroy(slider);
         }
 
