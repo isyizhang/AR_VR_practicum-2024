@@ -47,15 +47,15 @@ public class Dialogue : MonoBehaviour
         }
         else if (Value == 2 || Value == 5)
         {
-            ShowArrowAt(-0.1f, 0.075f, 0.05f);
+            ShowArrowAt(-0.1f, -0.05f, 0.075f);
         }
         else if (Value == 4)
         {
-            ShowArrowAt(-0.1f, 0.075f, 0.3f);
+            ShowArrowAt(-0.1f, -0.3f, 0.075f);
         }
         else if (Value == 3 || Value == 6)
         {
-            ShowArrowAt(-0.1f, 0.075f, 0.2f);
+            ShowArrowAt(-0.1f, -0.2f, 0.075f);
         }
         else if (Value == 7)
         {
@@ -69,8 +69,10 @@ public class Dialogue : MonoBehaviour
     {
         DestroyArrow();
         var arrow = Resources.Load<GameObject>("Arrow");
-        ArrowGameObject = Instantiate(arrow, new Vector3(x, y, z), Quaternion.Euler(0, -90, 0));
+        ArrowGameObject = Instantiate(arrow) as GameObject;
         ArrowGameObject.transform.SetParent(ModelTarget.transform);
+        ArrowGameObject.transform.localPosition = new Vector3(x, y, z);
+        ArrowGameObject.transform.rotation = Quaternion.Euler(0, -90, -90);
     }
 
     private void DestroyArrow()
