@@ -72,7 +72,7 @@ public class Dialogue : MonoBehaviour
         ArrowGameObject = Instantiate(arrow) as GameObject;
         ArrowGameObject.transform.SetParent(ModelTarget.transform);
         ArrowGameObject.transform.localPosition = new Vector3(x, y, z);
-        ArrowGameObject.transform.rotation = Quaternion.Euler(0, -90, -90);
+        ArrowGameObject.transform.localRotation = Quaternion.Euler(0, -90, -90);
     }
 
     private void DestroyArrow()
