@@ -2020,7 +2020,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Sweetness2
+      value: Sweetness 2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -2040,7 +2040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -485
+      value: -0.7097778
       objectReference: {fileID: 0}
     - target: {fileID: 954293124092660364, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_RootOrder
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This set of Knobs is to describe the snack you pick
+  m_text: This set of knobs is to describe the snack you pick.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2299,7 +2299,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: salinity2
+      value: Salinity 2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -2319,7 +2319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -485
+      value: -0.7097778
       objectReference: {fileID: 0}
     - target: {fileID: 954293124092660364, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_RootOrder
@@ -2415,7 +2415,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: sweetness
+      value: Sweetness
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.b
@@ -2455,7 +2455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -485
+      value: -0.7097778
       objectReference: {fileID: 0}
     - target: {fileID: 954293124092660360, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_Name
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is the convex lens to converge lights
+  m_text: This is the convex lens to converge lights.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3994,7 +3994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: These are the knobs you can adjust to show your flavor
+  m_text: These are the knobs you can adjust to show your flavor.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4774,7 +4774,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: salinity
+      value: Salinity
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -4794,7 +4794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -485
+      value: -0.7097778
       objectReference: {fileID: 0}
     - target: {fileID: 954293124092660360, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_Name
@@ -5306,7 +5306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: greasiness2
+      value: Greasiness 2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -5326,7 +5326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -485
+      value: -0.7097778
       objectReference: {fileID: 0}
     - target: {fileID: 954293124092660364, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_RootOrder
@@ -6855,7 +6855,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: greasiness
+      value: Greasiness
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.b
@@ -6883,7 +6883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357665, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -485
+      value: -0.7097778
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357669, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_Materials.Array.data[0]
