@@ -4,7 +4,7 @@ An AR interface that can recognize and track the 3D structure of the OptiDot sys
 ## Requirements
 Unity 2021.1.16f1
 
-Put [Vuforia Engine package](https://rochester.box.com/s/3nlf5zjp0new8tiamf9sz2dsetijvg0x) (10.18.4) under the "Packages/" folder
+Put [Vuforia Engine package](https://rochester.box.com/s/6u4os0qtrgg8ehjkt9yqvlporcjd5fpv) (10.18.4) under the "Packages/" folder
 
 ## Game logic and AR features
 - Narrative introduction 
