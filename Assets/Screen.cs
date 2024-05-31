@@ -28,6 +28,12 @@ public class Screen : MonoBehaviour
     private Button buttonSalinity;
     private Button buttonGreasiness;
 
+    public GameObject greenLightBeam; //Drag the game object named "LightBeamGreen" to the greenLightBeam field in the Unity Editor Inspector.
+    GameObject greenLightBeamPart1_1;
+    GameObject greenLightBeamPart1_2;
+    private Color originalGreenLightBeamColor;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +60,10 @@ public class Screen : MonoBehaviour
 
         GameObject filmGameObject23 = GameObject.Find("PolarizingFilm_2_3");
         film23 = filmGameObject23.GetComponent<PolarizingFilm>();
+
+        greenLightBeamPart1_1 = greenLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
+        originalGreenLightBeamColor = greenLightBeamPart1_1.GetComponent<Renderer>().material.color;
+        greenLightBeamPart1_2 = greenLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
 
     }
 
@@ -82,10 +92,27 @@ public class Screen : MonoBehaviour
         text.GetComponent<TextMeshPro>().text = value.ToString();
         int alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
+
+        Color newGreenLightBeamPart1_2_Color = ChangeColor(originalGreenLightBeamColor, a1/10f);
+        greenLightBeamPart1_2.GetComponent<Renderer>().material.color = newGreenLightBeamPart1_2_Color;
+
     }
 
     private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
     {
         return a1 * b1 + a2 * b2 + a3 * b3;
     }
+
+     private Color ChangeColor(Color oldColor, float percentage)
+    {
+    // Clamp the percentage value to the valid range [0, 1]
+        percentage = Mathf.Clamp01(percentage);
+
+        // Adjust the alpha (transparency) using the provided percentage
+        Color newColor = oldColor;
+        newColor.a *= percentage;
+
+        return newColor;
+    }
+
 }
