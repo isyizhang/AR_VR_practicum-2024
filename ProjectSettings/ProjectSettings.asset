@@ -704,11 +704,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: f7a3e2fd-0d08-471d-857b-13485318c746
+  cloudProjectId: a815cfa6-2fbb-4ee4-bb49-8317923b3175
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: AR_VR_practicum
-  organizationId: chizhang73
+  organizationId: yiz70
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
