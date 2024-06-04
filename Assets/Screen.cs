@@ -10,9 +10,9 @@ public class Screen : MonoBehaviour
     public Transform text;
     public int value;
 
-    public int a1;
-    public int a2;
-    public int a3;
+    public int a1; // green
+    public int a2; // blue
+    public int a3; // red
     public int b1;
     public int b2;
     public int b3;
@@ -27,23 +27,30 @@ public class Screen : MonoBehaviour
     private Button buttonSweetness;
     private Button buttonSalinity;
     private Button buttonGreasiness;
-    public GameObject greenLightBeam; //Drag the game object named "LightBeamGreen" to the greenLightBeam field in the Unity Editor Inspector.
-    GameObject greenLightBeamPart1_1;
-    GameObject greenLightBeamPart1_2;
+
+    //the following is controlling light color
+    public GameObject greenLightBeam;
     private Color originalGreenLightBeamColor;
+    private GameObject greenLightBeamPart1_1;
+    private GameObject greenLightBeamPart1_2;
+    private GameObject greenLightBeamPart1_3;
+    private GameObject greenLightBeamPart2;
+   
 
-    public GameObject blueLightBeam; //Drag the game object named "LightBeamBlue" to the blueLightBeam field in the Unity Editor Inspector.
-    GameObject blueLightBeamPart1_1;
-    GameObject blueLightBeamPart1_2;
+    public GameObject blueLightBeam; 
     private Color originalBlueLightBeamColor;
+    private GameObject blueLightBeamPart1_1;
+    private GameObject blueLightBeamPart1_2;
+    private GameObject blueLightBeamPart1_3;
+    private GameObject blueLightBeamPart2;
 
 
-public GameObject redLightBeam; //Drag the game object named "LightBeamRed" to the redLightBeam field in the Unity Editor Inspector.
-    GameObject redLightBeamPart1_1;
-    GameObject redLightBeamPart1_2;
+    public GameObject redLightBeam;
     private Color originalRedLightBeamColor;
-
-
+    private GameObject redLightBeamPart1_1;
+    private GameObject redLightBeamPart1_2;
+    private GameObject redLightBeamPart1_3;
+    private GameObject redLightBeamPart2;
 
 
     // Start is called before the first frame update
@@ -73,18 +80,24 @@ public GameObject redLightBeam; //Drag the game object named "LightBeamRed" to t
         GameObject filmGameObject23 = GameObject.Find("PolarizingFilm_2_3");
         film23 = filmGameObject23.GetComponent<PolarizingFilm>();
 
+        //the following is controlling light color change
         greenLightBeamPart1_1 = greenLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
-        originalGreenLightBeamColor = greenLightBeamPart1_1.GetComponent<Renderer>().material.color;
         greenLightBeamPart1_2 = greenLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
-
+        greenLightBeamPart1_3 = greenLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
+        greenLightBeamPart2 = greenLightBeam.transform.Find("LightBeam_Part2").gameObject;
+        originalGreenLightBeamColor = greenLightBeamPart1_1.GetComponent<Renderer>().material.color;
+        
         blueLightBeamPart1_1 = blueLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
-        originalBlueLightBeamColor = blueLightBeamPart1_1.GetComponent<Renderer>().material.color;
         blueLightBeamPart1_2 = blueLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
+        blueLightBeamPart1_3 = blueLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
+        blueLightBeamPart2 = blueLightBeam.transform.Find("LightBeam_Part2").gameObject;
+        originalBlueLightBeamColor = blueLightBeamPart1_1.GetComponent<Renderer>().material.color;
 
         redLightBeamPart1_1 = redLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
-        originalRedLightBeamColor = redLightBeamPart1_1.GetComponent<Renderer>().material.color;
         redLightBeamPart1_2 = redLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
-
+        redLightBeamPart1_3 = redLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
+        redLightBeamPart2 = redLightBeam.transform.Find("LightBeam_Part2").gameObject;
+        originalRedLightBeamColor = redLightBeamPart1_1.GetComponent<Renderer>().material.color;
     }
 
     // Update is called once per frame
@@ -112,16 +125,19 @@ public GameObject redLightBeam; //Drag the game object named "LightBeamRed" to t
         text.GetComponent<TextMeshPro>().text = value.ToString();
         int alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
+    
+        // Change color of individual LightBeam_Part1-2 based on values
+        ChangeLightBeamColor(greenLightBeamPart1_2, originalGreenLightBeamColor, a1 / 10f);
+        ChangeLightBeamColor(blueLightBeamPart1_2, originalBlueLightBeamColor, a2 / 10f);
+        ChangeLightBeamColor(redLightBeamPart1_2, originalRedLightBeamColor, a3 / 10f);
 
-        Color newGreenLightBeamPart1_2_Color = ChangeColor(originalGreenLightBeamColor, a1/10f);
-        greenLightBeamPart1_2.GetComponent<Renderer>().material.color = newGreenLightBeamPart1_2_Color;
-
-        Color newBlueLightBeamPart1_2_Color = ChangeColor(originalBlueLightBeamColor, a1/10f);
-        blueLightBeamPart1_2.GetComponent<Renderer>().material.color = newBlueLightBeamPart1_2_Color;
-
-        Color newRedLightBeamPart1_2_Color = ChangeColor(originalRedLightBeamColor, a1/10f);
-        redLightBeamPart1_2.GetComponent<Renderer>().material.color = newRedLightBeamPart1_2_Color;
-
+        //Change color of LightBeam_Part1-3 and LightBeam_Part2 based on the product of values
+        ChangeLightBeamColor(greenLightBeamPart1_3, originalGreenLightBeamColor, (a1 / 10f) * (b1 / 10f));
+        ChangeLightBeamColor(blueLightBeamPart1_3, originalBlueLightBeamColor, (a2 / 10f) * (b2 / 10f));
+        ChangeLightBeamColor(redLightBeamPart1_3, originalRedLightBeamColor, (a3 / 10f) * (b3 / 10f));
+        ChangeLightBeamColor(greenLightBeamPart2, originalGreenLightBeamColor, (a1 / 10f) * (b1 / 10f));
+        ChangeLightBeamColor(blueLightBeamPart2, originalBlueLightBeamColor, (a2 / 10f) * (b2 / 10f));
+        ChangeLightBeamColor(redLightBeamPart2, originalRedLightBeamColor, (a3 / 10f) * (b3 / 10f));
     }
 
     private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
@@ -129,15 +145,12 @@ public GameObject redLightBeam; //Drag the game object named "LightBeamRed" to t
         return a1 * b1 + a2 * b2 + a3 * b3;
     }
 
-    private Color ChangeColor(Color oldColor, float percentage)
+     private void ChangeLightBeamColor(GameObject lightBeamPart, Color originalColor, float percentage)
     {
-    // Clamp the percentage value to the valid range [0, 1]
         percentage = Mathf.Clamp01(percentage);
-
-        // Adjust the alpha (transparency) using the provided percentage
-        Color newColor = oldColor;
+        Color newColor = originalColor;
         newColor.a *= percentage;
-
-        return newColor;
+        lightBeamPart.GetComponent<Renderer>().material.color = newColor;
     }
+
 }
