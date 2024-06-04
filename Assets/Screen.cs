@@ -27,6 +27,24 @@ public class Screen : MonoBehaviour
     private Button buttonSweetness;
     private Button buttonSalinity;
     private Button buttonGreasiness;
+    public GameObject greenLightBeam; //Drag the game object named "LightBeamGreen" to the greenLightBeam field in the Unity Editor Inspector.
+    GameObject greenLightBeamPart1_1;
+    GameObject greenLightBeamPart1_2;
+    private Color originalGreenLightBeamColor;
+
+    public GameObject blueLightBeam; //Drag the game object named "LightBeamBlue" to the blueLightBeam field in the Unity Editor Inspector.
+    GameObject blueLightBeamPart1_1;
+    GameObject blueLightBeamPart1_2;
+    private Color originalBlueLightBeamColor;
+
+
+public GameObject redLightBeam; //Drag the game object named "LightBeamRed" to the redLightBeam field in the Unity Editor Inspector.
+    GameObject redLightBeamPart1_1;
+    GameObject redLightBeamPart1_2;
+    private Color originalRedLightBeamColor;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +73,18 @@ public class Screen : MonoBehaviour
         GameObject filmGameObject23 = GameObject.Find("PolarizingFilm_2_3");
         film23 = filmGameObject23.GetComponent<PolarizingFilm>();
 
+        greenLightBeamPart1_1 = greenLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
+        originalGreenLightBeamColor = greenLightBeamPart1_1.GetComponent<Renderer>().material.color;
+        greenLightBeamPart1_2 = greenLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
+
+        blueLightBeamPart1_1 = blueLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
+        originalBlueLightBeamColor = blueLightBeamPart1_1.GetComponent<Renderer>().material.color;
+        blueLightBeamPart1_2 = blueLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
+
+        redLightBeamPart1_1 = redLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
+        originalRedLightBeamColor = redLightBeamPart1_1.GetComponent<Renderer>().material.color;
+        redLightBeamPart1_2 = redLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
+
     }
 
     // Update is called once per frame
@@ -82,10 +112,32 @@ public class Screen : MonoBehaviour
         text.GetComponent<TextMeshPro>().text = value.ToString();
         int alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
+
+        Color newGreenLightBeamPart1_2_Color = ChangeColor(originalGreenLightBeamColor, a1/10f);
+        greenLightBeamPart1_2.GetComponent<Renderer>().material.color = newGreenLightBeamPart1_2_Color;
+
+        Color newBlueLightBeamPart1_2_Color = ChangeColor(originalBlueLightBeamColor, a1/10f);
+        blueLightBeamPart1_2.GetComponent<Renderer>().material.color = newBlueLightBeamPart1_2_Color;
+
+        Color newRedLightBeamPart1_2_Color = ChangeColor(originalRedLightBeamColor, a1/10f);
+        redLightBeamPart1_2.GetComponent<Renderer>().material.color = newRedLightBeamPart1_2_Color;
+
     }
 
     private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
     {
         return a1 * b1 + a2 * b2 + a3 * b3;
+    }
+
+    private Color ChangeColor(Color oldColor, float percentage)
+    {
+    // Clamp the percentage value to the valid range [0, 1]
+        percentage = Mathf.Clamp01(percentage);
+
+        // Adjust the alpha (transparency) using the provided percentage
+        Color newColor = oldColor;
+        newColor.a *= percentage;
+
+        return newColor;
     }
 }
