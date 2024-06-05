@@ -52,6 +52,13 @@ public class Screen : MonoBehaviour
     private GameObject redLightBeamPart1_3;
     private GameObject redLightBeamPart2;
 
+    public Image lightDot;
+
+    // Store the original scales
+    private Vector3 originalScalePart1_2;
+    private Vector3 originalScalePart1_3;
+    private Vector3 originalScalePart2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +105,12 @@ public class Screen : MonoBehaviour
         redLightBeamPart1_3 = redLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
         redLightBeamPart2 = redLightBeam.transform.Find("LightBeam_Part2").gameObject;
         originalRedLightBeamColor = redLightBeamPart1_1.GetComponent<Renderer>().material.color;
+
+        //the following is controlling the scale
+        // Cache the original scales of the parts
+        originalScalePart1_2 = greenLightBeamPart1_2.transform.localScale; 
+        originalScalePart1_3 = greenLightBeamPart1_3.transform.localScale;
+        originalScalePart2 = greenLightBeamPart2.transform.localScale;
     }
 
     // Update is called once per frame
@@ -138,6 +151,52 @@ public class Screen : MonoBehaviour
         ChangeLightBeamColor(greenLightBeamPart2, originalGreenLightBeamColor, (a1 / 10f) * (b1 / 10f));
         ChangeLightBeamColor(blueLightBeamPart2, originalBlueLightBeamColor, (a2 / 10f) * (b2 / 10f));
         ChangeLightBeamColor(redLightBeamPart2, originalRedLightBeamColor, (a3 / 10f) * (b3 / 10f));
+
+        //the following is controlling the scale
+        // Calculate new diameters based on a1, a2, a3 values for Part1_2
+        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1 / 10f, originalScalePart1_2.x);
+        float newDiameterBluePart1_2 = CalculateNewDiameter(a2 / 10f, originalScalePart1_2.x);
+        float newDiameterRedPart1_2 = CalculateNewDiameter(a3 / 10f, originalScalePart1_2.x);
+
+        // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
+        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1 / 10f) * (b1 / 10f), originalScalePart1_3.x);
+        float newDiameterBluePart1_3 = CalculateNewDiameter((a2 / 10f) * (b2 / 10f), originalScalePart1_3.x);
+        float newDiameterRedPart1_3 = CalculateNewDiameter((a3 / 10f) * (b3 / 10f), originalScalePart1_3.x);
+        
+        float newDiameterGreenPart2 = newDiameterGreenPart1_3; // Using the same new diameter as Part1_3
+        float newDiameterBluePart2 = newDiameterBluePart1_3; // Using the same new diameter as Part1_3
+        float newDiameterRedPart2 = newDiameterRedPart1_3; 
+
+        // Apply the new diameters to the respective cylinders
+        UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
+        UpdateCylinderDiameter(blueLightBeamPart1_2, newDiameterBluePart1_2);
+        UpdateCylinderDiameter(redLightBeamPart1_2, newDiameterRedPart1_2);
+
+        UpdateCylinderDiameter(greenLightBeamPart1_3, newDiameterGreenPart1_3);
+        UpdateCylinderDiameter(blueLightBeamPart1_3, newDiameterBluePart1_3);
+        UpdateCylinderDiameter(redLightBeamPart1_3, newDiameterRedPart1_3);
+
+        UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart2);
+        UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart2);
+        UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart2);
+
+        // // Get the colors of the three LightBeamPart2
+        // Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;
+        // Color blueColorPart2 = blueLightBeamPart2.GetComponent<Renderer>().material.color;
+        // Color redColorPart2 = redLightBeamPart2.GetComponent<Renderer>().material.color;
+        // // Debug logs to verify color values
+        // // Debug logs to verify individual color values
+        // Debug.Log($"Green Color Part2 - R: {greenColorPart2.r}, G: {greenColorPart2.g}, B: {greenColorPart2.b}");
+        // Debug.Log($"Blue Color Part2 - R: {blueColorPart2.r}, G: {blueColorPart2.g}, B: {blueColorPart2.b}");
+        // Debug.Log($"Red Color Part2 - R: {redColorPart2.r}, G: {redColorPart2.g}, B: {redColorPart2.b}");
+
+        // // Blend the colors
+        // Color blendedColor = BlendColors(greenColorPart2, blueColorPart2, redColorPart2);
+        // Debug.Log($"Blended Color - R: {blendedColor.r}, G: {blendedColor.g}, B: {blendedColor.b}");
+
+        // // Apply the blended color to the light dot
+        // lightDot.material.color = blendedColor;
+
     }
 
     private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
@@ -152,5 +211,82 @@ public class Screen : MonoBehaviour
         newColor.a *= percentage;
         lightBeamPart.GetComponent<Renderer>().material.color = newColor;
     }
+
+    float CalculateNewDiameter(float percentage, float originalDiameter)
+    {
+        // Ensure percentage is within bounds
+        percentage = Mathf.Clamp01(percentage);
+
+        // Calculate the new diameter based on the desired area
+        float originalRadius = originalDiameter / 2f;
+        float originalArea = Mathf.PI * originalRadius * originalRadius;
+        float newArea = percentage * originalArea;
+        float newRadius = Mathf.Sqrt(newArea / Mathf.PI);
+        float newDiameter = 2f * newRadius;
+
+        return newDiameter;
+    }
+
+    void UpdateCylinderDiameter(GameObject cylinder, float newDiameter)
+    {
+        // Adjust the scale based on the new diameter
+        Vector3 newScale = cylinder.transform.localScale;
+        newScale.x = newDiameter;
+        newScale.z = newDiameter; // Assuming uniform scaling for the cylinder
+
+        cylinder.transform.localScale = newScale;
+    }
+
+    void UpdateConeBaseDiameter(GameObject cone, float newDiameter)
+    {
+        // Adjust the scale based on the new diameter
+        Vector3 newScale = cone.transform.localScale;
+        newScale.x = newDiameter;
+
+        cone.transform.localScale = newScale;
+    }
+
+    //this function is better
+    // private Color BlendColors(Color color1, Color color2, Color color3)
+    // {
+    //     // Initialize counters for the sum of each color component
+    //     float sumR = 0f;
+    //     float sumG = 0f;
+    //     float sumB = 0f;
+
+    //     // Initialize a count of non-transparent colors
+    //     int count = 0;
+
+    //     // Add the RGB components of each color to the sum if the alpha value is greater than zero
+    //     if (color1.a > 0)
+    //     {
+    //         sumR += color1.r;
+    //         sumG += color1.g;
+    //         sumB += color1.b;
+    //         count++;
+    //     }
+    //     if (color2.a > 0)
+    //     {
+    //         sumR += color2.r;
+    //         sumG += color2.g;
+    //         sumB += color2.b;
+    //         count++;
+    //     }
+    //     if (color3.a > 0)
+    //     {
+    //         sumR += color3.r;
+    //         sumG += color3.g;
+    //         sumB += color3.b;
+    //         count++;
+    //     }
+
+    //     // Calculate the new alpha value by taking the minimum alpha value among the input colors and reducing it by half
+    //     //float alpha = count > 0 ? Mathf.Max(color1.a, color2.a, color3.a) : 0f;
+    //     float alpha = Mathf.Min(1, color1.a + color2.a + color3.a);
+
+    //     // Create and return the blended color with the summed RGB values and smaller alpha value
+    //     return new Color(sumR, sumG, sumB, alpha);
+    // }
+
 
 }
