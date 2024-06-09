@@ -180,10 +180,15 @@ public class Screen : MonoBehaviour
         UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart2);
         UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart2);
 
-        // // Get the colors of the three LightBeamPart2
-        // Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;
-        // Color blueColorPart2 = blueLightBeamPart2.GetComponent<Renderer>().material.color;
-        // Color redColorPart2 = redLightBeamPart2.GetComponent<Renderer>().material.color;
+        // Get the colors of the three LightBeamPart2
+        Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;
+        Color blueColorPart2 = blueLightBeamPart2.GetComponent<Renderer>().material.color;
+        Color redColorPart2 = redLightBeamPart2.GetComponent<Renderer>().material.color;
+        Color lightdotColor = lightDot.color;
+        //change the color of lightdot - may need a more complex function
+        lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        lightDot.color = lightdotColor;
+
         // // Debug logs to verify color values
         // // Debug logs to verify individual color values
         // Debug.Log($"Green Color Part2 - R: {greenColorPart2.r}, G: {greenColorPart2.g}, B: {greenColorPart2.b}");
@@ -193,10 +198,6 @@ public class Screen : MonoBehaviour
         // // Blend the colors
         // Color blendedColor = BlendColors(greenColorPart2, blueColorPart2, redColorPart2);
         // Debug.Log($"Blended Color - R: {blendedColor.r}, G: {blendedColor.g}, B: {blendedColor.b}");
-
-        // // Apply the blended color to the light dot
-        // lightDot.material.color = blendedColor;
-
     }
 
     private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
