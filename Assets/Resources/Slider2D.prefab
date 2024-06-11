@@ -180,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8244881290428809423}
   - component: {fileID: 8244881290428809456}
+  - component: {fileID: 2885487474208074615}
   m_Layer: 5
   m_Name: Slider2D
   m_TagString: Untagged
@@ -255,12 +256,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8244881291062153341}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 1
-  m_Value: 10
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2885487474208074615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244881290428809422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92034e370a4331547be161ad293a7a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8244881290466867614
 GameObject:
   m_ObjectHideFlags: 0

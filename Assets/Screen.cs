@@ -8,14 +8,14 @@ using UnityEngine.UI;
 public class Screen : MonoBehaviour
 {
     public Transform text;
-    public int value;
+    public float value;
 
-    public int a1; // green
-    public int a2; // blue
-    public int a3; // red
-    public int b1;
-    public int b2;
-    public int b3;
+    public float a1; // green
+    public float a2; // blue
+    public float a3; // red
+    public float b1;
+    public float b2;
+    public float b3;
 
     private PolarizingFilm film11;
     private PolarizingFilm film12;
@@ -136,32 +136,32 @@ public class Screen : MonoBehaviour
         b3 = film23.Value;
         value = DotProduct(a1, a2, a3, b1, b2, b3);
         text.GetComponent<TextMeshPro>().text = value.ToString();
-        int alpha = value * 255 / 300;
+        float alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
     
         // Change color of individual LightBeam_Part1-2 based on values
-        ChangeLightBeamColor(greenLightBeamPart1_2, originalGreenLightBeamColor, a1 / 10f);
-        ChangeLightBeamColor(blueLightBeamPart1_2, originalBlueLightBeamColor, a2 / 10f);
-        ChangeLightBeamColor(redLightBeamPart1_2, originalRedLightBeamColor, a3 / 10f);
+        ChangeLightBeamColor(greenLightBeamPart1_2, originalGreenLightBeamColor, a1 );
+        ChangeLightBeamColor(blueLightBeamPart1_2, originalBlueLightBeamColor, a2 );
+        ChangeLightBeamColor(redLightBeamPart1_2, originalRedLightBeamColor, a3 );
 
         //Change color of LightBeam_Part1-3 and LightBeam_Part2 based on the product of values
-        ChangeLightBeamColor(greenLightBeamPart1_3, originalGreenLightBeamColor, (a1 / 10f) * (b1 / 10f));
-        ChangeLightBeamColor(blueLightBeamPart1_3, originalBlueLightBeamColor, (a2 / 10f) * (b2 / 10f));
-        ChangeLightBeamColor(redLightBeamPart1_3, originalRedLightBeamColor, (a3 / 10f) * (b3 / 10f));
-        ChangeLightBeamColor(greenLightBeamPart2, originalGreenLightBeamColor, (a1 / 10f) * (b1 / 10f));
-        ChangeLightBeamColor(blueLightBeamPart2, originalBlueLightBeamColor, (a2 / 10f) * (b2 / 10f));
-        ChangeLightBeamColor(redLightBeamPart2, originalRedLightBeamColor, (a3 / 10f) * (b3 / 10f));
+        ChangeLightBeamColor(greenLightBeamPart1_3, originalGreenLightBeamColor, (a1 ) * (b1 ));
+        ChangeLightBeamColor(blueLightBeamPart1_3, originalBlueLightBeamColor, (a2 ) * (b2 ));
+        ChangeLightBeamColor(redLightBeamPart1_3, originalRedLightBeamColor, (a3 ) * (b3 ));
+        ChangeLightBeamColor(greenLightBeamPart2, originalGreenLightBeamColor, (a1 ) * (b1 ));
+        ChangeLightBeamColor(blueLightBeamPart2, originalBlueLightBeamColor, (a2 ) * (b2 ));
+        ChangeLightBeamColor(redLightBeamPart2, originalRedLightBeamColor, (a3 ) * (b3 ));
 
         //the following is controlling the scale
         // Calculate new diameters based on a1, a2, a3 values for Part1_2
-        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1 / 10f, originalScalePart1_2.x);
-        float newDiameterBluePart1_2 = CalculateNewDiameter(a2 / 10f, originalScalePart1_2.x);
-        float newDiameterRedPart1_2 = CalculateNewDiameter(a3 / 10f, originalScalePart1_2.x);
+        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1 , originalScalePart1_2.x);
+        float newDiameterBluePart1_2 = CalculateNewDiameter(a2 , originalScalePart1_2.x);
+        float newDiameterRedPart1_2 = CalculateNewDiameter(a3 , originalScalePart1_2.x);
 
         // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
-        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1 / 10f) * (b1 / 10f), originalScalePart1_3.x);
-        float newDiameterBluePart1_3 = CalculateNewDiameter((a2 / 10f) * (b2 / 10f), originalScalePart1_3.x);
-        float newDiameterRedPart1_3 = CalculateNewDiameter((a3 / 10f) * (b3 / 10f), originalScalePart1_3.x);
+        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1 ) * (b1 ), originalScalePart1_3.x);
+        float newDiameterBluePart1_3 = CalculateNewDiameter((a2 ) * (b2 ), originalScalePart1_3.x);
+        float newDiameterRedPart1_3 = CalculateNewDiameter((a3 ) * (b3 ), originalScalePart1_3.x);
         
         float newDiameterGreenPart2 = newDiameterGreenPart1_3; // Using the same new diameter as Part1_3
         float newDiameterBluePart2 = newDiameterBluePart1_3; // Using the same new diameter as Part1_3
@@ -200,9 +200,9 @@ public class Screen : MonoBehaviour
         // Debug.Log($"Blended Color - R: {blendedColor.r}, G: {blendedColor.g}, B: {blendedColor.b}");
     }
 
-    private int DotProduct(int a1, int a2, int a3, int b1, int b2, int b3)
+    private float DotProduct(float a1, float a2, float a3, float b1, float b2, float b3)
     {
-        return a1 * b1 + a2 * b2 + a3 * b3;
+        return (a1 * b1 + a2 * b2 + a3 * b3);
     }
 
      private void ChangeLightBeamColor(GameObject lightBeamPart, Color originalColor, float percentage)

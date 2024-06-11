@@ -11,7 +11,7 @@ public class PolarizingFilm : MonoBehaviour
     public GameObject canvasObject;
     public Button button;
 
-    private int _value; // value for level of taste
+    private float _value; // value for level of taste
 
     public Transform typeOfTaste;
 
@@ -21,7 +21,7 @@ public class PolarizingFilm : MonoBehaviour
 
     public Slider sliderInteractable;
 
-    public int Value
+    public float Value
     {
         get { return _value; }
         set { _value = value; }
@@ -37,7 +37,8 @@ public class PolarizingFilm : MonoBehaviour
             AddSlider();
             sliderInteractable.onValueChanged.AddListener(delegate
             {
-                _value = (int)sliderInteractable.value;
+                _value = sliderInteractable.value;
+                Debug.Log(_value);
                 SetValue(_value);
             });
         });
