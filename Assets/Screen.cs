@@ -53,11 +53,28 @@ public class Screen : MonoBehaviour
     private GameObject redLightBeamPart2;
 
     public Image lightDot;
+    public Image itemImage;
 
     // Store the original scales
     private Vector3 originalScalePart1_2;
     private Vector3 originalScalePart1_3;
     private Vector3 originalScalePart2;
+
+    public float A1
+    {
+        get { return a1; }
+    }
+
+    public float A2
+    {
+        get { return a2; }
+    }
+
+    public float A3
+    {
+        get { return a3; }
+    }
+
 
 
     // Start is called before the first frame update
@@ -188,6 +205,9 @@ public class Screen : MonoBehaviour
         //change the color of lightdot - may need a more complex function
         lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
         lightDot.color = lightdotColor;
+        Color itemImageColor = itemImage.color;
+        itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        itemImage.color = itemImageColor;
 
         // // Debug logs to verify color values
         // // Debug logs to verify individual color values
@@ -246,6 +266,7 @@ public class Screen : MonoBehaviour
 
         cone.transform.localScale = newScale;
     }
+
 
     //this function is better
     // private Color BlendColors(Color color1, Color color2, Color color3)

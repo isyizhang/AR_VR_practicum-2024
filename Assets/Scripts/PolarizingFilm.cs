@@ -21,11 +21,15 @@ public class PolarizingFilm : MonoBehaviour
 
     public Slider sliderInteractable;
 
-    public float Value
+    public float Value //the number
     {
         get { return _value; }
         set { _value = value; }
     }
+
+    private Coroutine sliderDisappearCoroutine;
+    public float sliderDisappearDelay = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,21 +37,64 @@ public class PolarizingFilm : MonoBehaviour
         SetValue(_value);
         button.AddListener(() =>
         {
+            ResetSliderTimer(); // Reset timer when button is clicked
+            //the fllowing will be excuted when button onPointerDownUpEvent is invoked
             DestroySlider();
             AddSlider();
             sliderInteractable.onValueChanged.AddListener(delegate
             {
-                _value = sliderInteractable.value;
-                Debug.Log(_value);
+                _value = sliderInteractable.value; 
                 SetValue(_value);
+                ResetSliderTimer();// Reset timer when button is clicked
             });
         });
+
+        // Start coroutine to hide slider after delay
+        StartSliderDisappearTimer();
+        
     }
 
-    // Update is called once per frame
-    void Update()
+     void Update()
     {
+        // Example: Check for user interaction to reset timer
+        if (Input.GetMouseButtonDown(0) && slider != null)
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(mousePosition), Vector2.zero);
+            
+            // Check if user interacts with slider or its UI components
+            if (hit.collider != null && hit.collider.gameObject == slider)
+            {
+                ResetSliderTimer(); // Reset timer when user interacts with slider
+            }
+        }
+    }
 
+    private void StartSliderDisappearTimer()
+    {
+        // Start coroutine to hide slider after delay
+        sliderDisappearCoroutine = StartCoroutine(SliderDisappearCoroutine());
+    }
+
+    private void ResetSliderTimer()
+    {
+        // Reset or restart coroutine if slider exists
+        if (sliderDisappearCoroutine != null)
+        {
+            StopCoroutine(sliderDisappearCoroutine);
+        }
+        sliderDisappearCoroutine = StartCoroutine(SliderDisappearCoroutine());
+    }
+
+    private IEnumerator SliderDisappearCoroutine()
+    {
+        yield return new WaitForSeconds(sliderDisappearDelay);
+
+        // Destroy slider if it exists after delay
+        if (slider != null)
+        {
+            DestroySlider();
+        }
     }
 
     private void AddSlider()
@@ -68,7 +115,6 @@ public class PolarizingFilm : MonoBehaviour
         {
             GameObject.Destroy(slider);
         }
-
     }
 
     public void ValueChangeCheck()

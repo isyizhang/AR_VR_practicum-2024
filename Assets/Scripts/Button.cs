@@ -15,11 +15,12 @@ public class Button : MonoBehaviour, Interactable
     public GameObject lightBeam;
 
     public bool isLightButton;
-
     private bool isPressed = false;
+    public bool isInteractable = true;
 
     public void OnPointerDown()
     {
+        if (!isInteractable) return;
         if (!isPressed)
         {
             transform.position += new Vector3(0, -0.005f, 0.009f);
@@ -41,6 +42,7 @@ public class Button : MonoBehaviour, Interactable
     }
     public void OnPointerUp(bool isInside)
     {
+        if (!isInteractable) return;
         if (isPressed)
         {
             transform.position -= new Vector3(0, -0.005f, 0.009f);
@@ -65,6 +67,8 @@ public class Button : MonoBehaviour, Interactable
 
     public void AddListener(UnityAction call)
     {
+        if (!isInteractable) return;
+        //when onPointerDownUpEvent is invoked, all added listeners (call methods) will be executed.
         this.onPointerDownUpEvent.AddListener(call);
     }
 }
