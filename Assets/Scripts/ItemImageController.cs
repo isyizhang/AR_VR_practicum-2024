@@ -27,7 +27,7 @@ public class ItemImageController : MonoBehaviour
         float[] userInterests = userInput.GetUserInterests();
         Debug.Log("user input" + userInterests[0]);
         rankedItems = FoodItemDatabase.foodItems.OrderByDescending(item => CalculateDotProduct(userInterests, item.GetAttributes())).ToList();
-        //currentIndex = 0;
+        currentIndex = 0;
         Debug.Log("db " + FoodItemDatabase.foodItems[0].itemName);
         Debug.Log("ranked items + " + rankedItems[0].itemName);
 
@@ -75,27 +75,42 @@ public class ItemImageController : MonoBehaviour
         film23.SetValue(itemVector[2]);
     }
 
-    public void ShowNextItem()
+        public void ShowNextItem()
     {
         if (rankedItems != null && rankedItems.Count > 0)
         {
-            currentIndex = (currentIndex + 1) % rankedItems.Count;
-            DisplayItem(rankedItems[currentIndex]);
-            SetItemVector(rankedItems[currentIndex]);
-            Debug.Log("NextItem is called" + currentIndex);
+            if (currentIndex < rankedItems.Count - 1)
+            {
+                currentIndex++;
+                DisplayItem(rankedItems[currentIndex]);
+                SetItemVector(rankedItems[currentIndex]);
+                Debug.Log("NextItem is called " + currentIndex);
+            }
+            else
+            {
+                Debug.Log("Already at the last item, can't go to next.");
+            }
         }
-        Debug.Log("NextItem is called" + currentIndex);
+        Debug.Log("NextItem is called " + currentIndex);
     }
 
     public void ShowPreviousItem()
     {
         if (rankedItems != null && rankedItems.Count > 0)
         {
-            currentIndex = (currentIndex - 1 + rankedItems.Count) % rankedItems.Count;
-            DisplayItem(rankedItems[currentIndex]);
-            SetItemVector(rankedItems[currentIndex]);
-            Debug.Log("PrevItem is called" + currentIndex);
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                DisplayItem(rankedItems[currentIndex]);
+                SetItemVector(rankedItems[currentIndex]);
+                Debug.Log("PrevItem is called " + currentIndex);
+            }
+            else
+            {
+                Debug.Log("Already at the first item, can't go to previous.");
+            }
         }
-        Debug.Log("PrevItem is called" + currentIndex);
+        Debug.Log("PrevItem is called " + currentIndex);
     }
+
 }

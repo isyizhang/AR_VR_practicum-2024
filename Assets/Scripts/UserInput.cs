@@ -7,9 +7,9 @@ public class UserInput : MonoBehaviour
     private float attribute2;
     private float attribute3;
     public Screen screen;
-    private PolarizingFilm film11;
-    private PolarizingFilm film12;
-    private PolarizingFilm film13;
+    // private PolarizingFilm film11;
+    // private PolarizingFilm film12;
+    // private PolarizingFilm film13;
 
     public float[] GetUserInterests()
     {
@@ -18,14 +18,14 @@ public class UserInput : MonoBehaviour
 
     void Start() 
     {
-        GameObject filmGameObject11 = GameObject.Find("PolarizingFilm_1_1");
-        film11 = filmGameObject11.GetComponent<PolarizingFilm>();
+        // GameObject filmGameObject11 = GameObject.Find("PolarizingFilm_1_1");
+        // film11 = filmGameObject11.GetComponent<PolarizingFilm>();
         
-        GameObject filmGameObject12 = GameObject.Find("PolarizingFilm_1_2");
-        film12 = filmGameObject12.GetComponent<PolarizingFilm>();
+        // GameObject filmGameObject12 = GameObject.Find("PolarizingFilm_1_2");
+        // film12 = filmGameObject12.GetComponent<PolarizingFilm>();
 
-        GameObject filmGameObject13 = GameObject.Find("PolarizingFilm_1_3");
-        film13 = filmGameObject13.GetComponent<PolarizingFilm>();
+        // GameObject filmGameObject13 = GameObject.Find("PolarizingFilm_1_3");
+        // film13 = filmGameObject13.GetComponent<PolarizingFilm>();
       
     }
 

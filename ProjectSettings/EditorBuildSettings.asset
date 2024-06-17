@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_scene.unity
     guid: e69d643bf439909478553566a756aa90
   - enabled: 1
-    path: Assets/Scenes/Copy_Scene1.unity
-    guid: 083a241a7a5e647459bfccf2fdc041e9
+    path: Assets/Scenes/Scene2.unity
+    guid: c452f511e8713af438420be6976cf52a
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 755009e6cfc6b2e4196c4e627af23f63
+  - enabled: 1
+    path: Assets/Scenes/Copy_Original_MainScene.unity
+    guid: 083a241a7a5e647459bfccf2fdc041e9
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 7b3e706f360be3b49a0a47e5639b8b36, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 355d93be0b374d7419bdb15f00afd6a7, type: 2}
