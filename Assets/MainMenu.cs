@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene1()
     {
-        SceneManager.LoadSceneAsync("Scene2");
+        SceneManager.LoadSceneAsync("UserScene1");
     }
 
     public void LoadScene2()
