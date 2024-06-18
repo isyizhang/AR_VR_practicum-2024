@@ -13,20 +13,32 @@ public class Screen : MonoBehaviour
     public float a1; // green
     public float a2; // blue
     public float a3; // red
+    public float a4; // extra beam on the left
+    public float a5; // extra beam on the right
     public float b1;
     public float b2;
     public float b3;
+    public float b4;
+    public float b5;
 
+    public GameObject extraPathLeft1;
+    public GameObject extraPathRight1;
     private PolarizingFilm film11;
     private PolarizingFilm film12;
     private PolarizingFilm film13;
+    private PolarizingFilm film14;
+    private PolarizingFilm film15;
     private PolarizingFilm film21;
     private PolarizingFilm film22;
     private PolarizingFilm film23;
+    private PolarizingFilm film24;
+    private PolarizingFilm film25;
 
     private Button buttonSweetness;
     private Button buttonSalinity;
     private Button buttonGreasiness;
+    private Button buttonLeft1;
+    private Button buttonRight1;
 
     //the following is controlling light color
     public GameObject greenLightBeam;
@@ -35,9 +47,9 @@ public class Screen : MonoBehaviour
     private GameObject greenLightBeamPart1_2;
     private GameObject greenLightBeamPart1_3;
     private GameObject greenLightBeamPart2;
-   
 
-    public GameObject blueLightBeam; 
+
+    public GameObject blueLightBeam;
     private Color originalBlueLightBeamColor;
     private GameObject blueLightBeamPart1_1;
     private GameObject blueLightBeamPart1_2;
@@ -51,6 +63,20 @@ public class Screen : MonoBehaviour
     private GameObject redLightBeamPart1_2;
     private GameObject redLightBeamPart1_3;
     private GameObject redLightBeamPart2;
+
+    public GameObject leftLightBeam;
+    private Color originalLeftLightBeamColor;
+    private GameObject leftLightBeamPart1_1;
+    private GameObject leftLightBeamPart1_2;
+    private GameObject leftLightBeamPart1_3;
+    private GameObject leftLightBeamPart2;
+
+    public GameObject rightLightBeam;
+    private Color originalRightLightBeamColor;
+    private GameObject rightLightBeamPart1_1;
+    private GameObject rightLightBeamPart1_2;
+    private GameObject rightLightBeamPart1_3;
+    private GameObject rightLightBeamPart2;
 
     public Image lightDot;
     public Image itemImage;
@@ -75,6 +101,16 @@ public class Screen : MonoBehaviour
         get { return a3; }
     }
 
+    public float A4
+    {
+        get { return a4; }
+    }
+
+    public float A5
+    {
+        get { return a5; }
+    }
+
 
 
     // Start is called before the first frame update
@@ -95,6 +131,16 @@ public class Screen : MonoBehaviour
         GameObject button13 = filmGameObject13.transform.Find("ButtonGreasiness").gameObject;
         buttonGreasiness = button13.GetComponent<Button>();
 
+        GameObject filmGameObject14 = extraPathLeft1.transform.Find("PolarizingFilm_1_4").gameObject;
+        film14 = filmGameObject14.GetComponent<PolarizingFilm>();
+        GameObject button14 = filmGameObject14.transform.Find("ButtonLeft1").gameObject;
+        buttonLeft1 = button14.GetComponent<Button>();
+
+        GameObject filmGameObject15 = extraPathRight1.transform.Find("PolarizingFilm_1_5").gameObject;
+        film15 = filmGameObject15.GetComponent<PolarizingFilm>();
+        GameObject button15 = filmGameObject15.transform.Find("ButtonRight1").gameObject;
+        buttonRight1 = button15.GetComponent<Button>();
+
         GameObject filmGameObject21 = GameObject.Find("PolarizingFilm_2_1");
         film21 = filmGameObject21.GetComponent<PolarizingFilm>();
 
@@ -104,13 +150,19 @@ public class Screen : MonoBehaviour
         GameObject filmGameObject23 = GameObject.Find("PolarizingFilm_2_3");
         film23 = filmGameObject23.GetComponent<PolarizingFilm>();
 
+        GameObject filmGameObject24 = extraPathLeft1.transform.Find("PolarizingFilm_2_4").gameObject;
+        film24 = filmGameObject24.GetComponent<PolarizingFilm>();
+
+        GameObject filmGameObject25 = extraPathRight1.transform.Find("PolarizingFilm_2_5").gameObject;
+        film25 = filmGameObject25.GetComponent<PolarizingFilm>();
+
         //the following is controlling light color change
         greenLightBeamPart1_1 = greenLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
         greenLightBeamPart1_2 = greenLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
         greenLightBeamPart1_3 = greenLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
         greenLightBeamPart2 = greenLightBeam.transform.Find("LightBeam_Part2").gameObject;
         originalGreenLightBeamColor = greenLightBeamPart1_1.GetComponent<Renderer>().material.color;
-        
+
         blueLightBeamPart1_1 = blueLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
         blueLightBeamPart1_2 = blueLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
         blueLightBeamPart1_3 = blueLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
@@ -123,9 +175,20 @@ public class Screen : MonoBehaviour
         redLightBeamPart2 = redLightBeam.transform.Find("LightBeam_Part2").gameObject;
         originalRedLightBeamColor = redLightBeamPart1_1.GetComponent<Renderer>().material.color;
 
+        leftLightBeamPart1_1 = leftLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
+        leftLightBeamPart1_2 = leftLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
+        leftLightBeamPart1_3 = leftLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
+        leftLightBeamPart2 = leftLightBeam.transform.Find("LightBeam_Part2").gameObject;
+        originalLeftLightBeamColor = leftLightBeamPart1_1.GetComponent<Renderer>().material.color;
+
+        rightLightBeamPart1_1 = rightLightBeam.transform.Find("LightBeam_Part1-1").gameObject;
+        rightLightBeamPart1_2 = rightLightBeam.transform.Find("LightBeam_Part1-2").gameObject;
+        rightLightBeamPart1_3 = rightLightBeam.transform.Find("LightBeam_Part1-3").gameObject;
+        rightLightBeamPart2 = rightLightBeam.transform.Find("LightBeam_Part2").gameObject;
+
         //the following is controlling the scale
         // Cache the original scales of the parts
-        originalScalePart1_2 = greenLightBeamPart1_2.transform.localScale; 
+        originalScalePart1_2 = greenLightBeamPart1_2.transform.localScale;
         originalScalePart1_3 = greenLightBeamPart1_3.transform.localScale;
         originalScalePart2 = greenLightBeamPart2.transform.localScale;
     }
@@ -148,41 +211,69 @@ public class Screen : MonoBehaviour
             a3 = film13.Value;
         }
         else { a3 = 0; }
+        if (extraPathLeft1.activeSelf && buttonLeft1.lightBeam.activeSelf)
+        {
+            a4 = film14.Value;
+        }
+        else { a4 = 0; }
+        if (extraPathRight1.activeSelf && buttonRight1.lightBeam.activeSelf)
+        {
+            a5 = film15.Value;
+        }
+        else { a5 = 0; }
+
         b1 = film21.Value;
         b2 = film22.Value;
         b3 = film23.Value;
-        value = DotProduct(a1, a2, a3, b1, b2, b3);
+        if (extraPathLeft1.activeSelf)
+        {
+            b4 = film24.Value;
+        }
+        else { b4 = 0; }
+        if (extraPathRight1.activeSelf)
+        {
+            b5 = film25.Value;
+        }
+        else { b5 = 0; }
+        value = DotProduct(a1, a2, a3, a4, a5, b1, b2, b3, b4, b5);
         text.GetComponent<TextMeshPro>().text = value.ToString();
         float alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
-    
+
         // Change color of individual LightBeam_Part1-2 based on values
-        ChangeLightBeamColor(greenLightBeamPart1_2, originalGreenLightBeamColor, a1 );
-        ChangeLightBeamColor(blueLightBeamPart1_2, originalBlueLightBeamColor, a2 );
-        ChangeLightBeamColor(redLightBeamPart1_2, originalRedLightBeamColor, a3 );
+        ChangeLightBeamColor(greenLightBeamPart1_2, originalGreenLightBeamColor, a1);
+        ChangeLightBeamColor(blueLightBeamPart1_2, originalBlueLightBeamColor, a2);
+        ChangeLightBeamColor(redLightBeamPart1_2, originalRedLightBeamColor, a3);
+        ChangeLightBeamColor(leftLightBeamPart1_2, originalLeftLightBeamColor, a4);
+        ChangeLightBeamColor(rightLightBeamPart1_2, originalRightLightBeamColor, a5);
 
         //Change color of LightBeam_Part1-3 and LightBeam_Part2 based on the product of values
-        ChangeLightBeamColor(greenLightBeamPart1_3, originalGreenLightBeamColor, (a1 ) * (b1 ));
-        ChangeLightBeamColor(blueLightBeamPart1_3, originalBlueLightBeamColor, (a2 ) * (b2 ));
-        ChangeLightBeamColor(redLightBeamPart1_3, originalRedLightBeamColor, (a3 ) * (b3 ));
-        ChangeLightBeamColor(greenLightBeamPart2, originalGreenLightBeamColor, (a1 ) * (b1 ));
-        ChangeLightBeamColor(blueLightBeamPart2, originalBlueLightBeamColor, (a2 ) * (b2 ));
-        ChangeLightBeamColor(redLightBeamPart2, originalRedLightBeamColor, (a3 ) * (b3 ));
+        ChangeLightBeamColor(greenLightBeamPart1_3, originalGreenLightBeamColor, (a1) * (b1));
+        ChangeLightBeamColor(blueLightBeamPart1_3, originalBlueLightBeamColor, (a2) * (b2));
+        ChangeLightBeamColor(redLightBeamPart1_3, originalRedLightBeamColor, (a3) * (b3));
+        ChangeLightBeamColor(leftLightBeamPart1_3, originalLeftLightBeamColor, (a4) * (b4));
+        ChangeLightBeamColor(rightLightBeamPart1_3, originalRightLightBeamColor, (a5) * (b5));
+        ChangeLightBeamColor(greenLightBeamPart2, originalGreenLightBeamColor, (a1) * (b1));
+        ChangeLightBeamColor(blueLightBeamPart2, originalBlueLightBeamColor, (a2) * (b2));
+        ChangeLightBeamColor(redLightBeamPart2, originalRedLightBeamColor, (a3) * (b3));
+        ChangeLightBeamColor(leftLightBeamPart2, originalLeftLightBeamColor, (a4) * (b4));
+        ChangeLightBeamColor(rightLightBeamPart2, originalRightLightBeamColor, (a5) * (b5));
+
 
         //the following is controlling the scale
         // Calculate new diameters based on a1, a2, a3 values for Part1_2
-        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1 , originalScalePart1_2.x);
-        float newDiameterBluePart1_2 = CalculateNewDiameter(a2 , originalScalePart1_2.x);
-        float newDiameterRedPart1_2 = CalculateNewDiameter(a3 , originalScalePart1_2.x);
+        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1, originalScalePart1_2.x);
+        float newDiameterBluePart1_2 = CalculateNewDiameter(a2, originalScalePart1_2.x);
+        float newDiameterRedPart1_2 = CalculateNewDiameter(a3, originalScalePart1_2.x);
 
         // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
-        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1 ) * (b1 ), originalScalePart1_3.x);
-        float newDiameterBluePart1_3 = CalculateNewDiameter((a2 ) * (b2 ), originalScalePart1_3.x);
-        float newDiameterRedPart1_3 = CalculateNewDiameter((a3 ) * (b3 ), originalScalePart1_3.x);
-        
+        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1) * (b1), originalScalePart1_3.x);
+        float newDiameterBluePart1_3 = CalculateNewDiameter((a2) * (b2), originalScalePart1_3.x);
+        float newDiameterRedPart1_3 = CalculateNewDiameter((a3) * (b3), originalScalePart1_3.x);
+
         float newDiameterGreenPart2 = newDiameterGreenPart1_3; // Using the same new diameter as Part1_3
         float newDiameterBluePart2 = newDiameterBluePart1_3; // Using the same new diameter as Part1_3
-        float newDiameterRedPart2 = newDiameterRedPart1_3; 
+        float newDiameterRedPart2 = newDiameterRedPart1_3;
 
         // Apply the new diameters to the respective cylinders
         UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
@@ -220,12 +311,12 @@ public class Screen : MonoBehaviour
         // Debug.Log($"Blended Color - R: {blendedColor.r}, G: {blendedColor.g}, B: {blendedColor.b}");
     }
 
-    private float DotProduct(float a1, float a2, float a3, float b1, float b2, float b3)
+    private float DotProduct(float a1, float a2, float a3, float a4, float a5, float b1, float b2, float b3, float b4, float b5)
     {
-        return (a1 * b1 + a2 * b2 + a3 * b3);
+        return (a1 * b1 + a2 * b2 + a3 * b3 + a4 * b4 + a5 * b5);
     }
 
-     private void ChangeLightBeamColor(GameObject lightBeamPart, Color originalColor, float percentage)
+    private void ChangeLightBeamColor(GameObject lightBeamPart, Color originalColor, float percentage)
     {
         percentage = Mathf.Clamp01(percentage);
         Color newColor = originalColor;
