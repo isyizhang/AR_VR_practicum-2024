@@ -101,7 +101,7 @@ MonoBehaviour:
   uvScale: 1
   angleRange: 360
   useXZPlane: 1
-  autoUpdate: 0
+  autoUpdate: 1
 --- !u!1 &837716054137192497
 GameObject:
   m_ObjectHideFlags: 0
