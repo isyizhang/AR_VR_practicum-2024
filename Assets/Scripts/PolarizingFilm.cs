@@ -1,16 +1,15 @@
+// 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
 using TMPro;
 
 public class PolarizingFilm : MonoBehaviour
 {
     public GameObject canvasObject;
     public Button button;
-
+    public TMP_InputField inputField; // Add a reference to the input field
     private float _value; // value for level of taste
 
     public Transform typeOfTaste;
@@ -33,12 +32,11 @@ public class PolarizingFilm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // slider = GameObject.Find("Slider2D");
         SetValue(_value);
-        button.AddListener(() =>
+
+        button.AddPointerDownUpListener(() =>
         {
             ResetSliderTimer(); // Reset timer when button is clicked
-            //the fllowing will be excuted when button onPointerDownUpEvent is invoked
             DestroySlider();
             AddSlider();
             sliderInteractable.onValueChanged.AddListener(delegate
@@ -49,12 +47,19 @@ public class PolarizingFilm : MonoBehaviour
             });
         });
 
-        // Start coroutine to hide slider after delay
+        button.AddLongPressListener(() =>
+        {
+            ResetSliderTimer(); // Reset timer when button is clicked
+            // Show the input field and set its text to the current typeOfTaste
+            inputField.gameObject.SetActive(true);
+            inputField.text = typeOfTaste.GetComponent<TextMeshPro>().text;
+            inputField.onEndEdit.AddListener(UpdateTypeOfTaste);
+        });
+
         StartSliderDisappearTimer();
-        
     }
 
-     void Update()
+    void Update()
     {
         // Example: Check for user interaction to reset timer
         if (Input.GetMouseButtonDown(0) && slider != null)
@@ -95,6 +100,10 @@ public class PolarizingFilm : MonoBehaviour
         {
             DestroySlider();
         }
+
+        // Optionally, hide the input field after the delay
+        // if you want to hide the input field after the delay, uncomment the next line
+        // inputField.gameObject.SetActive(false);
     }
 
     private void AddSlider()
@@ -126,4 +135,13 @@ public class PolarizingFilm : MonoBehaviour
     {
         text.GetComponent<TextMeshPro>().text = value.ToString();
     }
+
+    private void UpdateTypeOfTaste(string newText)
+    {
+        typeOfTaste.GetComponent<TextMeshPro>().text = newText;
+        // Keep the input field active for further edits
+        inputField.gameObject.SetActive(false); // Hide the input field after editing
+        inputField.onEndEdit.RemoveListener(UpdateTypeOfTaste); // Remove the listener to prevent multiple additions
+    }
+    
 }
