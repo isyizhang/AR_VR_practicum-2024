@@ -10,6 +10,7 @@ public class PolarizingFilm : MonoBehaviour
     public GameObject canvasObject;
     public Button button;
     public TMP_InputField inputField; // Add a reference to the input field
+    //private GameObject inputFieldGameObject;
     private float _value; // value for level of taste
 
     public Transform typeOfTaste;
@@ -32,6 +33,9 @@ public class PolarizingFilm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameObject inputFieldGameObject = GameObject.Find("AttributeInputField");
+        // Transform inputFieldTransform = transform.Find("AttributeInputField");
+        // inputField = inputFieldTransform.GetComponent<TMP_InputField>();
         SetValue(_value);
 
         button.AddPointerDownUpListener(() =>
