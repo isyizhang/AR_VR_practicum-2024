@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene2()
     {
-        SceneManager.LoadSceneAsync("Copy_Scene1");
+        SceneManager.LoadSceneAsync("DesignerScene");
     }
 
     public void ExitGame()
