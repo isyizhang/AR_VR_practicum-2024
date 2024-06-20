@@ -17,9 +17,12 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
     public bool isInteractable = true;
 
     public GameObject largeLens;
-    public GameObject lightPath1;
+    public GameObject lightPath1; //left 1
 
-    public GameObject lightPath2;
+    public GameObject lightPath2;  //right 1
+
+    public GameObject lightPath3; //left 2
+    public GameObject lightPath4; //right 2
 
     public GameObject userFigure;
     public void OnPointerDown()
@@ -40,10 +43,26 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
                 {
                     lightPath2.SetActive(true);
                 }
+                else if (!lightPath3.activeSelf)
+                {
+                    lightPath3.SetActive(true);
+                }
+                else if (!lightPath4.activeSelf)
+                {
+                    lightPath4.SetActive(true);
+                }
             }
             else
             {
-                if (lightPath2.activeSelf)
+                if (lightPath4.activeSelf)
+                {
+                    lightPath4.SetActive(false);
+                }
+                else if (lightPath3.activeSelf)
+                {
+                    lightPath3.SetActive(false);
+                }
+                else if (lightPath2.activeSelf)
                 {
                     lightPath2.SetActive(false);
                 }
@@ -67,15 +86,22 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
                 onPointerDownUpEvent.Invoke();
             }
         }
+
+
         if (!lightPath1.activeSelf && !lightPath2.activeSelf)
         {
             largeLens.transform.localScale = new Vector3(0.2f, 0.02f, 0.2f);
             userFigure.transform.localPosition = new Vector3(10.0f, 5.0f, -1.0f);
         }
-        else
+        else if (!lightPath3.activeSelf && !lightPath4.activeSelf)
         {
             largeLens.transform.localScale = new Vector3(0.4f, 0.02f, 0.4f);
             userFigure.transform.localPosition = new Vector3(-150.0f, 5.0f, -1.0f);
+        }
+        else
+        {
+            largeLens.transform.localScale = new Vector3(0.6f, 0.02f, 0.6f);
+            userFigure.transform.localPosition = new Vector3(-300.0f, 5.0f, -1.0f);
         }
     }
     public void OnPointerDragged(Vector2 oldPointerPosition, Vector2 newPointerPosition) { }
