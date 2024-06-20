@@ -90,17 +90,17 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
 
         if (!lightPath1.activeSelf && !lightPath2.activeSelf)
         {
-            largeLens.transform.localScale = new Vector3(0.2f, 0.02f, 0.2f);
+            largeLens.transform.localScale = new Vector3(0.2f, 0.002f, 0.2f);
             userFigure.transform.localPosition = new Vector3(10.0f, 5.0f, -1.0f);
         }
         else if (!lightPath3.activeSelf && !lightPath4.activeSelf)
         {
-            largeLens.transform.localScale = new Vector3(0.4f, 0.02f, 0.4f);
+            largeLens.transform.localScale = new Vector3(0.4f, 0.002f, 0.2f);
             userFigure.transform.localPosition = new Vector3(-150.0f, 5.0f, -1.0f);
         }
         else
         {
-            largeLens.transform.localScale = new Vector3(0.6f, 0.02f, 0.6f);
+            largeLens.transform.localScale = new Vector3(0.6f, 0.002f, 0.2f);
             userFigure.transform.localPosition = new Vector3(-300.0f, 5.0f, -1.0f);
         }
     }

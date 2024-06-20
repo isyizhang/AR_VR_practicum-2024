@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -355,50 +355,87 @@ public class DesignerModeScreen : MonoBehaviour
         float newDiameterGreenPart1_2 = CalculateNewDiameter(a1, originalScalePart1_2.x);
         float newDiameterBluePart1_2 = CalculateNewDiameter(a2, originalScalePart1_2.x);
         float newDiameterRedPart1_2 = CalculateNewDiameter(a3, originalScalePart1_2.x);
+        float newDiameterLeft1Part1_2 = CalculateNewDiameter(a4, originalScalePart1_2.x);
+        float newDiameterRight1Part1_2 = CalculateNewDiameter(a5, originalScalePart1_2.x);
+        float newDiameterLeft2Part1_2 = CalculateNewDiameter(a6, originalScalePart1_2.x);
+        float newDiameterRight2Part1_2 = CalculateNewDiameter(a7, originalScalePart1_2.x);
+
 
         // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
         float newDiameterGreenPart1_3 = CalculateNewDiameter((a1) * (b1), originalScalePart1_3.x);
         float newDiameterBluePart1_3 = CalculateNewDiameter((a2) * (b2), originalScalePart1_3.x);
         float newDiameterRedPart1_3 = CalculateNewDiameter((a3) * (b3), originalScalePart1_3.x);
-
-        float newDiameterGreenPart2 = newDiameterGreenPart1_3; // Using the same new diameter as Part1_3
-        float newDiameterBluePart2 = newDiameterBluePart1_3; // Using the same new diameter as Part1_3
-        float newDiameterRedPart2 = newDiameterRedPart1_3;
+        float newDiameterLeft1Part1_3 = CalculateNewDiameter((a4) * (b4), originalScalePart1_3.x);
+        float newDiameterRight1Part1_3 = CalculateNewDiameter((a5) * (b5), originalScalePart1_3.x);
+        float newDiameterLeft2Part1_3 = CalculateNewDiameter((a6) * (b6), originalScalePart1_3.x);
+        float newDiameterRight2Part1_3 = CalculateNewDiameter((a7) * (b7), originalScalePart1_3.x);
+        
 
         // Apply the new diameters to the respective cylinders
         UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
         UpdateCylinderDiameter(blueLightBeamPart1_2, newDiameterBluePart1_2);
         UpdateCylinderDiameter(redLightBeamPart1_2, newDiameterRedPart1_2);
+        UpdateCylinderDiameter(leftLightBeamPart1_2, newDiameterLeft1Part1_2);
+        UpdateCylinderDiameter(rightLightBeamPart1_2, newDiameterRight1Part1_2);
+        UpdateCylinderDiameter(leftLightBeam2Part1_2, newDiameterLeft2Part1_2);
+        UpdateCylinderDiameter(rightLightBeam2Part1_2, newDiameterRight2Part1_2);
 
         UpdateCylinderDiameter(greenLightBeamPart1_3, newDiameterGreenPart1_3);
         UpdateCylinderDiameter(blueLightBeamPart1_3, newDiameterBluePart1_3);
         UpdateCylinderDiameter(redLightBeamPart1_3, newDiameterRedPart1_3);
+        UpdateCylinderDiameter(leftLightBeamPart1_3, newDiameterLeft1Part1_3);
+        UpdateCylinderDiameter(rightLightBeamPart1_3, newDiameterRight1Part1_3);
+        UpdateCylinderDiameter(leftLightBeam2Part1_3, newDiameterLeft2Part1_3);
+        UpdateCylinderDiameter(rightLightBeam2Part1_3, newDiameterRight2Part1_3);
 
-        UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart2);
-        UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart2);
-        UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart2);
 
-        // Get the colors of the three LightBeamPart2
+        UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart1_3);
+        UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart1_3);
+        UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart1_3);
+        UpdateConeBaseDiameter(leftLightBeamPart2, newDiameterLeft1Part1_3);
+        UpdateConeBaseDiameter(rightLightBeamPart2, newDiameterRight1Part1_3);
+        UpdateConeBaseDiameter(leftLightBeam2Part2, newDiameterLeft2Part1_3);
+        UpdateConeBaseDiameter(rightLightBeam2Part2, newDiameterRight2Part1_3);
+
+        // // Get the colors of the three LightBeamPart2
+        // Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;
+        // Color blueColorPart2 = blueLightBeamPart2.GetComponent<Renderer>().material.color;
+        // Color redColorPart2 = redLightBeamPart2.GetComponent<Renderer>().material.color;
+        // Color lightdotColor = lightDot.color;
+        // //change the color of lightdot - may need a more complex function
+        // lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        // lightDot.color = lightdotColor;
+        // Color itemImageColor = itemImage.color;
+        // itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        // itemImage.color = itemImageColor;
+
+        // Get the colors of the seven LightBeamPart2
         Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;
         Color blueColorPart2 = blueLightBeamPart2.GetComponent<Renderer>().material.color;
         Color redColorPart2 = redLightBeamPart2.GetComponent<Renderer>().material.color;
+        Color left1ColorPart2 = leftLightBeamPart2.GetComponent<Renderer>().material.color;
+        Color right1ColorPart2 = rightLightBeamPart2.GetComponent<Renderer>().material.color;
+        Color left2ColorPart2 = leftLightBeam2Part2.GetComponent<Renderer>().material.color;
+        Color right2ColorPart2 = rightLightBeam2Part2.GetComponent<Renderer>().material.color;
+
+        // Calculate the average alpha value
+        float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a +
+                        left1ColorPart2.a + right1ColorPart2.a + left2ColorPart2.a + right2ColorPart2.a;
+        float averageAlpha = totalAlpha / 3.2f;
+
+        // Clamp the average alpha value
+        //float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha - 0.3f));
+        float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
+
+        // Change the color of lightDot
         Color lightdotColor = lightDot.color;
-        //change the color of lightdot - may need a more complex function
-        lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        lightdotColor.a = clampedAlpha;
         lightDot.color = lightdotColor;
+
+        // Change the color of itemImage
         Color itemImageColor = itemImage.color;
-        itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        itemImageColor.a = clampedAlpha;
         itemImage.color = itemImageColor;
-
-        // // Debug logs to verify color values
-        // // Debug logs to verify individual color values
-        // Debug.Log($"Green Color Part2 - R: {greenColorPart2.r}, G: {greenColorPart2.g}, B: {greenColorPart2.b}");
-        // Debug.Log($"Blue Color Part2 - R: {blueColorPart2.r}, G: {blueColorPart2.g}, B: {blueColorPart2.b}");
-        // Debug.Log($"Red Color Part2 - R: {redColorPart2.r}, G: {redColorPart2.g}, B: {redColorPart2.b}");
-
-        // // Blend the colors
-        // Color blendedColor = BlendColors(greenColorPart2, blueColorPart2, redColorPart2);
-        // Debug.Log($"Blended Color - R: {blendedColor.r}, G: {blendedColor.g}, B: {blendedColor.b}");
     }
 
     private float DotProduct(float a1, float a2, float a3, float a4, float a5, float a6, float a7, float b1, float b2, float b3, float b4, float b5, float b6, float b7)
