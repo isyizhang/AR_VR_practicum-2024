@@ -33,9 +33,6 @@ public class PolarizingFilm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject inputFieldGameObject = GameObject.Find("AttributeInputField");
-        // Transform inputFieldTransform = transform.Find("AttributeInputField");
-        // inputField = inputFieldTransform.GetComponent<TMP_InputField>();
         SetValue(_value);
 
         button.AddPointerDownUpListener(() =>
@@ -47,6 +44,8 @@ public class PolarizingFilm : MonoBehaviour
             {
                 _value = sliderInteractable.value; 
                 SetValue(_value);
+                string typeOfTasteText = typeOfTaste.GetComponent<TextMeshPro>().text;
+                slider.transform.Find("Text").GetComponent<TextMeshProUGUI>().SetText($"{typeOfTasteText} = {_value}");
                 ResetSliderTimer();// Reset timer when button is clicked
             });
         });
@@ -117,8 +116,8 @@ public class PolarizingFilm : MonoBehaviour
         slider.transform.SetParent(canvasObject.transform, false);
         sliderInteractable = slider.GetComponent<Slider>();
         sliderInteractable.value = _value;
-        GameObject sliderText = slider.transform.Find("Text").gameObject;
-        sliderText.GetComponent<TextMeshProUGUI>().SetText(typeOfTaste.GetComponent<TextMeshPro>().text);
+        string typeOfTasteText = typeOfTaste.GetComponent<TextMeshPro>().text;
+        slider.transform.Find("Text").GetComponent<TextMeshProUGUI>().SetText($"{typeOfTasteText} = {_value}");
     }
 
     private void DestroySlider()
