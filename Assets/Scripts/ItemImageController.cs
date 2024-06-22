@@ -113,4 +113,25 @@ public class ItemImageController : MonoBehaviour
         Debug.Log("PrevItem is called " + currentIndex);
     }
 
+    // public void ShowNextFoodImage()
+    // {
+    //     if (FoodItemDatabase.foodItems != null && FoodItemDatabase.foodItems.Count > 0)
+    //     {
+    //         currentIndex = (currentIndex + 1) % FoodItemDatabase.foodItems.Count;
+    //         DisplayItem(FoodItemDatabase.foodItems[currentIndex]);
+    //         SetItemVector(FoodItemDatabase.foodItems[currentIndex]);
+    //         Debug.Log("ShowNextFoodItem is called " + currentIndex);
+    //     }
+    // }
+
+    // public void ShowPreviousFoodImage()
+    // {
+    //     if (FoodItemDatabase.foodItems != null && FoodItemDatabase.foodItems.Count > 0)
+    //     {
+    //         currentIndex = (currentIndex - 1 + FoodItemDatabase.foodItems.Count) % FoodItemDatabase.foodItems.Count;
+    //         DisplayItem(FoodItemDatabase.foodItems[currentIndex]);
+    //         SetItemVector(FoodItemDatabase.foodItems[currentIndex]);
+    //         Debug.Log("ShowPreviousFoodItem is called " + currentIndex);
+    //     }
+    // }
 }

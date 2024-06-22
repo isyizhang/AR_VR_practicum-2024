@@ -17,7 +17,7 @@ public class Button : MonoBehaviour, Interactable
     public bool isInteractable = true;
 
     private float pressDuration = 0f;
-    public float longPressThreshold = 2f;
+    public float longPressThreshold = 1f;
     private Coroutine longPressCoroutine;
 
     public void OnPointerDown()
