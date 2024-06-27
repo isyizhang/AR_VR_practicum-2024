@@ -152,7 +152,7 @@ public class Screen : MonoBehaviour
         b2 = film22.Value;
         b3 = film23.Value;
         value = DotProduct(a1, a2, a3, b1, b2, b3);
-        text.GetComponent<TextMeshPro>().text = value.ToString();
+        text.GetComponent<TextMeshPro>().text = value.ToString("F2");
         float alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
     

@@ -320,7 +320,7 @@ public class DesignerModeScreen : MonoBehaviour
         }
         else { b7 = 0; }
         value = DotProduct(a1, a2, a3, a4, a5, a6, a7, b1, b2, b3, b4, b5, b6, b7);
-        text.GetComponent<TextMeshPro>().text = value.ToString();
+        text.GetComponent<TextMeshPro>().text = value.ToString("F2");
         float alpha = value * 255 / 300;
         text.GetComponent<TextMeshPro>().faceColor = new Color32(225, 135, 0, Convert.ToByte(alpha));
 
