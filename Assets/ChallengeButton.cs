@@ -7,11 +7,11 @@ public class ChallengeButton : MonoBehaviour
     
     public void OnChallenge1ButtonClick()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Challenge1");
     }
     public void OnChallenge2ButtonClick()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Challenge2");
     }
 }
 

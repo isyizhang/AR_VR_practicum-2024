@@ -17,7 +17,7 @@ public class Button : MonoBehaviour, Interactable
     public bool isInteractable = true;
 
     private float pressDuration = 0f;
-    public float longPressThreshold = 1f;
+    private float longPressThreshold = 1f;
     private Coroutine longPressCoroutine;
 
     public void OnPointerDown()
@@ -25,21 +25,16 @@ public class Button : MonoBehaviour, Interactable
         if (!isInteractable) return;
         if (!isPressed)
         {
+            //Debug.Log("Button pressed down.");
             transform.position += new Vector3(0, -0.005f, 0.009f);
             isPressed = true;
 
             if (lightBeam && isLightButton)
             {
-                if (!lightBeam.activeSelf)
-                {
-                    lightBeam.SetActive(true);
-                }
-                else
-                {
-                    lightBeam.SetActive(false);
-                }
+                lightBeam.SetActive(!lightBeam.activeSelf);
             }
 
+            pressDuration = 0f;
             longPressCoroutine = StartCoroutine(LongPressDetector());
         }
     }
@@ -49,28 +44,22 @@ public class Button : MonoBehaviour, Interactable
         if (!isInteractable) return;
         if (isPressed)
         {
+            //Debug.Log("Button released.");
             transform.position -= new Vector3(0, -0.005f, 0.009f);
             isPressed = false;
 
             if (longPressCoroutine != null)
             {
                 StopCoroutine(longPressCoroutine);
+                longPressCoroutine = null;
             }
 
             if (pressDuration < longPressThreshold)
             {
-                // Short press
                 if (isInside)
                 {
+                    Debug.Log("Short press detected.");
                     onPointerDownUpEvent.Invoke();
-                }
-            }
-            else
-            {
-                // Long press
-                if (isInside)
-                {
-                    onLongPressEvent.Invoke();
                 }
             }
 
@@ -80,14 +69,17 @@ public class Button : MonoBehaviour, Interactable
 
     private IEnumerator LongPressDetector()
     {
+        Debug.Log("LongPressDetector started.");
         while (true)
         {
             pressDuration += Time.deltaTime;
+            //Debug.Log("Press Duration: " + pressDuration + " / Threshold: " + longPressThreshold);
+
             if (pressDuration >= longPressThreshold)
             {
-                // Invoke long press event and break the loop
+                Debug.Log("Long press detected.");
                 onLongPressEvent.Invoke();
-                break;
+                yield break; // Exit the coroutine after detecting a long press
             }
             yield return null;
         }
@@ -108,22 +100,19 @@ public class Button : MonoBehaviour, Interactable
     public void AddListener(UnityAction call)
     {
         if (!isInteractable) return;
-        //when onPointerDownUpEvent is invoked, all added listeners (call methods) will be executed.
         this.onPointerDownUpEvent.AddListener(call);
     }
 
-     public void AddPointerDownUpListener(UnityAction call)
+    public void AddPointerDownUpListener(UnityAction call)
     {
         if (!isInteractable) return;
-        //when onPointerDownUpEvent is invoked, all added listeners (call methods) will be executed.
         this.onPointerDownUpEvent.AddListener(call);
     }
 
     public void AddLongPressListener(UnityAction call)
     {
         if (!isInteractable) return;
-        //when onLongPressEvent is invoked, all added listeners (call methods) will be executed.
         this.onLongPressEvent.AddListener(call);
     }
-}
 
+}

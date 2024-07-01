@@ -14,6 +14,7 @@ public class PolarizingFilm : MonoBehaviour
     private float _value; // value for level of taste
 
     public Transform typeOfTaste;
+    public Transform typeOfTaste2;
 
     public Transform text;
 
@@ -28,7 +29,7 @@ public class PolarizingFilm : MonoBehaviour
     }
 
     private Coroutine sliderDisappearCoroutine;
-    public float sliderDisappearDelay = 3f;
+    private float sliderDisappearDelay = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,7 @@ public class PolarizingFilm : MonoBehaviour
 
         button.AddLongPressListener(() =>
         {
-            ResetSliderTimer(); // Reset timer when button is clicked
+            //ResetSliderTimer(); // Reset timer when button is clicked
             // Show the input field and set its text to the current typeOfTaste
             inputField.gameObject.SetActive(true);
             inputField.text = typeOfTaste.GetComponent<TextMeshPro>().text;
@@ -142,6 +143,11 @@ public class PolarizingFilm : MonoBehaviour
     private void UpdateTypeOfTaste(string newText)
     {
         typeOfTaste.GetComponent<TextMeshPro>().text = newText;
+        // Check if typeOfTaste2 is assigned
+        if (typeOfTaste2 != null)
+        {
+            typeOfTaste2.GetComponent<TextMeshPro>().text = newText + " 2";
+        }
         // Keep the input field active for further edits
         inputField.gameObject.SetActive(false); // Hide the input field after editing
         inputField.onEndEdit.RemoveListener(UpdateTypeOfTaste); // Remove the listener to prevent multiple additions

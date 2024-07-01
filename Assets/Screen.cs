@@ -202,22 +202,27 @@ public class Screen : MonoBehaviour
         Color blueColorPart2 = blueLightBeamPart2.GetComponent<Renderer>().material.color;
         Color redColorPart2 = redLightBeamPart2.GetComponent<Renderer>().material.color;
         Color lightdotColor = lightDot.color;
-        //change the color of lightdot - may need a more complex function
-        lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+
+        // //change the color of lightdot - may need a more complex function
+        // float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a;
+        // float averageAlpha = totalAlpha / 1.2f;
+        // float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
+        // // add logic if less than 0.2 / 0.25 then can't see or something?
+        // // Change the color of lightDot
+        // lightdotColor.a = clampedAlpha;
+        // lightDot.color = lightdotColor;
+        // // Change the color of itemImage
+        // Color itemImageColor = itemImage.color;
+        // itemImageColor.a = clampedAlpha;
+        // itemImage.color = itemImageColor;
+
+        //original code
+        lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.1f));
         lightDot.color = lightdotColor;
         Color itemImageColor = itemImage.color;
-        itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.3f));
+        itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a - 0.1f));
         itemImage.color = itemImageColor;
 
-        // // Debug logs to verify color values
-        // // Debug logs to verify individual color values
-        // Debug.Log($"Green Color Part2 - R: {greenColorPart2.r}, G: {greenColorPart2.g}, B: {greenColorPart2.b}");
-        // Debug.Log($"Blue Color Part2 - R: {blueColorPart2.r}, G: {blueColorPart2.g}, B: {blueColorPart2.b}");
-        // Debug.Log($"Red Color Part2 - R: {redColorPart2.r}, G: {redColorPart2.g}, B: {redColorPart2.b}");
-
-        // // Blend the colors
-        // Color blendedColor = BlendColors(greenColorPart2, blueColorPart2, redColorPart2);
-        // Debug.Log($"Blended Color - R: {blendedColor.r}, G: {blendedColor.g}, B: {blendedColor.b}");
     }
 
     private float DotProduct(float a1, float a2, float a3, float b1, float b2, float b3)
