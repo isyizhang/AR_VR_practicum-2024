@@ -16,6 +16,8 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
     private bool isPressed = false;
     public bool isInteractable = true;
 
+    public bool isChallenge1 = false;
+
     public GameObject largeLens;
     public GameObject lightPath1; //left 1
 
@@ -28,6 +30,31 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
     public void OnPointerDown()
     {
         if (!isInteractable) return;
+        
+        if (isChallenge1)
+        {
+            if (!isPressed)
+            {
+                transform.position += new Vector3(0, -0.005f, 0.009f);
+                isPressed = true;
+
+                if (isAdd)
+                {
+                    if (!lightPath1.activeSelf)
+                    {
+                        lightPath1.SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (lightPath1.activeSelf)
+                    {
+                        lightPath1.SetActive(false);
+                    }
+                }
+            }
+        }
+
         if (!isPressed)
         {
             transform.position += new Vector3(0, -0.005f, 0.009f);

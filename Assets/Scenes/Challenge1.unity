@@ -11070,6 +11070,7 @@ MonoBehaviour:
   text: {fileID: 1736059809}
   isAdd: 1
   isInteractable: 1
+  isChallenge1: 1
   largeLens: {fileID: 1604640310}
   lightPath1: {fileID: 10276941}
   lightPath2: {fileID: 1191192402}
@@ -16450,6 +16451,7 @@ MonoBehaviour:
   text: {fileID: 1210813810}
   isAdd: 0
   isInteractable: 1
+  isChallenge1: 1
   largeLens: {fileID: 1604640310}
   lightPath1: {fileID: 10276941}
   lightPath2: {fileID: 1191192402}
