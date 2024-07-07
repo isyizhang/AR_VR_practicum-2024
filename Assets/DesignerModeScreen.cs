@@ -10,6 +10,8 @@ public class DesignerModeScreen : MonoBehaviour
     public Transform text;
     public float value;
 
+    public bool isChallenge1 = false;
+
     public float a1; // green
     public float a2; // blue
     public float a3; // red
@@ -418,24 +420,35 @@ public class DesignerModeScreen : MonoBehaviour
         Color left2ColorPart2 = leftLightBeam2Part2.GetComponent<Renderer>().material.color;
         Color right2ColorPart2 = rightLightBeam2Part2.GetComponent<Renderer>().material.color;
 
-        // Calculate the average alpha value
-        float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a +
-                        left1ColorPart2.a + right1ColorPart2.a + left2ColorPart2.a + right2ColorPart2.a;
-        float averageAlpha = totalAlpha / 3.2f;
-
-        // Clamp the average alpha value
-        //float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha - 0.3f));
-        float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
-
-        // Change the color of lightDot
         Color lightdotColor = lightDot.color;
-        lightdotColor.a = clampedAlpha;
-        lightDot.color = lightdotColor;
-
-        // Change the color of itemImage
         Color itemImageColor = itemImage.color;
-        itemImageColor.a = clampedAlpha;
-        itemImage.color = itemImageColor;
+
+        if(isChallenge1){
+            lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a + left1ColorPart2.a - 0.1f));
+            lightDot.color = lightdotColor;
+            itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a + left1ColorPart2.a - 0.1f));
+            itemImage.color = itemImageColor;
+        }else {
+            // Calculate the average alpha value
+            float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a +
+                            left1ColorPart2.a + right1ColorPart2.a + left2ColorPart2.a + right2ColorPart2.a;
+            float averageAlpha = totalAlpha / 3.2f;
+
+            // Clamp the average alpha value
+            //float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha - 0.3f));
+            float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
+
+            // Change the color of lightDot
+            //Color lightdotColor = lightDot.color;
+            lightdotColor.a = clampedAlpha;
+            lightDot.color = lightdotColor;
+
+            // Change the color of itemImage
+            //Color itemImageColor = itemImage.color;
+            itemImageColor.a = clampedAlpha;
+            itemImage.color = itemImageColor;
+        }
+        
     }
 
     private float DotProduct(float a1, float a2, float a3, float a4, float a5, float a6, float a7, float b1, float b2, float b3, float b4, float b5, float b6, float b7)
@@ -484,49 +497,5 @@ public class DesignerModeScreen : MonoBehaviour
 
         cone.transform.localScale = newScale;
     }
-
-
-    //this function is better
-    // private Color BlendColors(Color color1, Color color2, Color color3)
-    // {
-    //     // Initialize counters for the sum of each color component
-    //     float sumR = 0f;
-    //     float sumG = 0f;
-    //     float sumB = 0f;
-
-    //     // Initialize a count of non-transparent colors
-    //     int count = 0;
-
-    //     // Add the RGB components of each color to the sum if the alpha value is greater than zero
-    //     if (color1.a > 0)
-    //     {
-    //         sumR += color1.r;
-    //         sumG += color1.g;
-    //         sumB += color1.b;
-    //         count++;
-    //     }
-    //     if (color2.a > 0)
-    //     {
-    //         sumR += color2.r;
-    //         sumG += color2.g;
-    //         sumB += color2.b;
-    //         count++;
-    //     }
-    //     if (color3.a > 0)
-    //     {
-    //         sumR += color3.r;
-    //         sumG += color3.g;
-    //         sumB += color3.b;
-    //         count++;
-    //     }
-
-    //     // Calculate the new alpha value by taking the minimum alpha value among the input colors and reducing it by half
-    //     //float alpha = count > 0 ? Mathf.Max(color1.a, color2.a, color3.a) : 0f;
-    //     float alpha = Mathf.Min(1, color1.a + color2.a + color3.a);
-
-    //     // Create and return the blended color with the summed RGB values and smaller alpha value
-    //     return new Color(sumR, sumG, sumB, alpha);
-    // }
-
 
 }

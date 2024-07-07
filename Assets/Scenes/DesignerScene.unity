@@ -5872,7 +5872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Sweetness 2
+      value: Sugar 2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -6576,7 +6576,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Salinity 2
+      value: Salt 2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -7030,7 +7030,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Sweetness
+      value: Sugar
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.b
@@ -11070,6 +11070,7 @@ MonoBehaviour:
   text: {fileID: 1736059809}
   isAdd: 1
   isInteractable: 1
+  isChallenge1: 0
   largeLens: {fileID: 1604640310}
   lightPath1: {fileID: 10276941}
   lightPath2: {fileID: 1191192402}
@@ -13819,7 +13820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Salinity
+      value: Salt
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -15289,7 +15290,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Greasiness 2
+      value: Fat 2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -16450,6 +16451,7 @@ MonoBehaviour:
   text: {fileID: 1210813810}
   isAdd: 0
   isInteractable: 1
+  isChallenge1: 0
   largeLens: {fileID: 1604640310}
   lightPath1: {fileID: 10276941}
   lightPath2: {fileID: 1191192402}
@@ -18069,7 +18071,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Greasiness
+      value: Fat
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.b

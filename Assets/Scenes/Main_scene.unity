@@ -668,10 +668,10 @@ MonoBehaviour:
   button: {fileID: 453653205}
   inputField: {fileID: 2027545903}
   typeOfTaste: {fileID: 1986147464}
+  typeOfTaste2: {fileID: 0}
   text: {fileID: 1334545349}
   slider: {fileID: 0}
   sliderInteractable: {fileID: 0}
-  sliderDisappearDelay: 10
 --- !u!1 &130402423
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,10 +849,10 @@ MonoBehaviour:
   button: {fileID: 1762048075}
   inputField: {fileID: 2027545903}
   typeOfTaste: {fileID: 1886930606}
+  typeOfTaste2: {fileID: 0}
   text: {fileID: 1543532675}
   slider: {fileID: 0}
   sliderInteractable: {fileID: 0}
-  sliderDisappearDelay: 10
 --- !u!1 &163569356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1186,6 @@ MonoBehaviour:
   lightBeam: {fileID: 168312666}
   isLightButton: 0
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1 &228349882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 954293124092660360, guid: d7048b8f20b704807817c310a39c3414, type: 3}
@@ -1227,7 +1226,6 @@ MonoBehaviour:
   lightBeam: {fileID: 1963550093}
   isLightButton: 1
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1 &239486213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1707,6 @@ MonoBehaviour:
   lightBeam: {fileID: 168312666}
   isLightButton: 1
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1 &398249039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1882,6 @@ MonoBehaviour:
   lightBeam: {fileID: 0}
   isLightButton: 0
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!43 &432532613
 Mesh:
   m_ObjectHideFlags: 0
@@ -2269,7 +2265,6 @@ MonoBehaviour:
   lightBeam: {fileID: 1963550093}
   isLightButton: 0
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1 &485924277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +2910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Sweetness 2
+      value: Knob1-2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -3194,7 +3189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Salinity 2
+      value: Knob2-2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -3299,10 +3294,10 @@ MonoBehaviour:
   button: {fileID: 420907821}
   inputField: {fileID: 2027545903}
   typeOfTaste: {fileID: 1569953649}
+  typeOfTaste2: {fileID: 0}
   text: {fileID: 136609779}
   slider: {fileID: 0}
   sliderInteractable: {fileID: 0}
-  sliderDisappearDelay: 10
 --- !u!1001 &724694516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3312,7 +3307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Sweetness
+      value: Knob1
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.b
@@ -3449,10 +3444,10 @@ MonoBehaviour:
   button: {fileID: 219087478}
   inputField: {fileID: 2027545903}
   typeOfTaste: {fileID: 1067009893}
+  typeOfTaste2: {fileID: 0}
   text: {fileID: 1625181658}
   slider: {fileID: 0}
   sliderInteractable: {fileID: 0}
-  sliderDisappearDelay: 10
 --- !u!1 &741309982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,7 +5464,6 @@ MonoBehaviour:
   lightBeam: {fileID: 0}
   isLightButton: 0
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1001 &1317731978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6182,7 +6176,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Salinity
+      value: Knob2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -6496,7 +6490,6 @@ MonoBehaviour:
   lightBeam: {fileID: 592786541}
   isLightButton: 1
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1 &1604640310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6966,7 +6959,6 @@ MonoBehaviour:
   lightBeam: {fileID: 0}
   isLightButton: 0
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1001 &1743253073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6976,7 +6968,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Greasiness 2
+      value: Knob3-2
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.g
@@ -7077,7 +7069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1750692573
 Transform:
   m_ObjectHideFlags: 0
@@ -7155,7 +7147,6 @@ MonoBehaviour:
   lightBeam: {fileID: 592786541}
   isLightButton: 0
   isInteractable: 1
-  longPressThreshold: 3
 --- !u!1 &1792017839
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,10 +8219,10 @@ MonoBehaviour:
   button: {fileID: 1735608554}
   inputField: {fileID: 2027545903}
   typeOfTaste: {fileID: 385491130}
+  typeOfTaste2: {fileID: 0}
   text: {fileID: 1226767817}
   slider: {fileID: 0}
   sliderInteractable: {fileID: 0}
-  sliderDisappearDelay: 10
 --- !u!1001 &1946156246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8552,7 +8543,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_text
-      value: Greasiness
+      value: Knob3
       objectReference: {fileID: 0}
     - target: {fileID: 954293123125357664, guid: d7048b8f20b704807817c310a39c3414, type: 3}
       propertyPath: m_fontColor.b
@@ -9112,10 +9103,10 @@ MonoBehaviour:
   button: {fileID: 1295475434}
   inputField: {fileID: 2027545903}
   typeOfTaste: {fileID: 1560370477}
+  typeOfTaste2: {fileID: 0}
   text: {fileID: 1684320143}
   slider: {fileID: 0}
   sliderInteractable: {fileID: 0}
-  sliderDisappearDelay: 10
 --- !u!1 &2138466159
 GameObject:
   m_ObjectHideFlags: 0
