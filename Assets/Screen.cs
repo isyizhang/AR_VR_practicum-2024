@@ -171,31 +171,31 @@ public class Screen : MonoBehaviour
 
         //the following is controlling the scale
         // Calculate new diameters based on a1, a2, a3 values for Part1_2
-        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1 , originalScalePart1_2.x);
-        float newDiameterBluePart1_2 = CalculateNewDiameter(a2 , originalScalePart1_2.x);
-        float newDiameterRedPart1_2 = CalculateNewDiameter(a3 , originalScalePart1_2.x);
+        // float newDiameterGreenPart1_2 = CalculateNewDiameter(a1 , originalScalePart1_2.x);
+        // float newDiameterBluePart1_2 = CalculateNewDiameter(a2 , originalScalePart1_2.x);
+        // float newDiameterRedPart1_2 = CalculateNewDiameter(a3 , originalScalePart1_2.x);
 
         // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
-        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1 ) * (b1 ), originalScalePart1_3.x);
-        float newDiameterBluePart1_3 = CalculateNewDiameter((a2 ) * (b2 ), originalScalePart1_3.x);
-        float newDiameterRedPart1_3 = CalculateNewDiameter((a3 ) * (b3 ), originalScalePart1_3.x);
+        // float newDiameterGreenPart1_3 = CalculateNewDiameter((a1 ) * (b1 ), originalScalePart1_3.x);
+        // float newDiameterBluePart1_3 = CalculateNewDiameter((a2 ) * (b2 ), originalScalePart1_3.x);
+        // float newDiameterRedPart1_3 = CalculateNewDiameter((a3 ) * (b3 ), originalScalePart1_3.x);
         
-        float newDiameterGreenPart2 = newDiameterGreenPart1_3; // Using the same new diameter as Part1_3
-        float newDiameterBluePart2 = newDiameterBluePart1_3; // Using the same new diameter as Part1_3
-        float newDiameterRedPart2 = newDiameterRedPart1_3; 
+        // float newDiameterGreenPart2 = newDiameterGreenPart1_3; // Using the same new diameter as Part1_3
+        // float newDiameterBluePart2 = newDiameterBluePart1_3; // Using the same new diameter as Part1_3
+        // float newDiameterRedPart2 = newDiameterRedPart1_3; 
 
-        // Apply the new diameters to the respective cylinders
-        UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
-        UpdateCylinderDiameter(blueLightBeamPart1_2, newDiameterBluePart1_2);
-        UpdateCylinderDiameter(redLightBeamPart1_2, newDiameterRedPart1_2);
+        // // Apply the new diameters to the respective cylinders
+        // UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
+        // UpdateCylinderDiameter(blueLightBeamPart1_2, newDiameterBluePart1_2);
+        // UpdateCylinderDiameter(redLightBeamPart1_2, newDiameterRedPart1_2);
 
-        UpdateCylinderDiameter(greenLightBeamPart1_3, newDiameterGreenPart1_3);
-        UpdateCylinderDiameter(blueLightBeamPart1_3, newDiameterBluePart1_3);
-        UpdateCylinderDiameter(redLightBeamPart1_3, newDiameterRedPart1_3);
+        // UpdateCylinderDiameter(greenLightBeamPart1_3, newDiameterGreenPart1_3);
+        // UpdateCylinderDiameter(blueLightBeamPart1_3, newDiameterBluePart1_3);
+        // UpdateCylinderDiameter(redLightBeamPart1_3, newDiameterRedPart1_3);
 
-        UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart2);
-        UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart2);
-        UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart2);
+        // UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart2);
+        // UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart2);
+        // UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart2);
 
         // Get the colors of the three LightBeamPart2
         Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;

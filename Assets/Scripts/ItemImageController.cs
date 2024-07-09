@@ -8,6 +8,7 @@ public class ItemImageController : MonoBehaviour
 {
     public UserInput userInput;
     public Image itemImage; // UI Image to display the item image
+    public Image foodFigure;
     private List<Item> rankedItems;
     private int currentIndex = 0;
     public PolarizingFilm film21;
@@ -56,6 +57,7 @@ public class ItemImageController : MonoBehaviour
         if (itemSprite != null)
         {
             itemImage.sprite = itemSprite;
+            foodFigure.sprite = itemSprite;
         }
         else
         {

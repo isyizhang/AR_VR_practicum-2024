@@ -36,7 +36,7 @@ public static class FoodItemDatabase
         new Item("milk", new float[] { 0.4f, 0f, 0.5f }),
         new Item("apple", new float[] { 0.7f, 0f, 0f }),
         new Item("egg", new float[] { 0.1f, 0.1f, 0.2f }),
-        new Item("broccoli", new float[] { 0.2f, 0.1f, 0f }),
+        new Item("broccoli", new float[] { 0.2f, 0.1f, 0f }), 
         //new Item("fruitYogurt", new float[] { 0.7f, 0f, 0.4f })
     };
 }

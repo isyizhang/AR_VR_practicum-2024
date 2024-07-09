@@ -354,50 +354,50 @@ public class DesignerModeScreen : MonoBehaviour
 
         //the following is controlling the scale
         // Calculate new diameters based on a1, a2, a3 values for Part1_2
-        float newDiameterGreenPart1_2 = CalculateNewDiameter(a1, originalScalePart1_2.x);
-        float newDiameterBluePart1_2 = CalculateNewDiameter(a2, originalScalePart1_2.x);
-        float newDiameterRedPart1_2 = CalculateNewDiameter(a3, originalScalePart1_2.x);
-        float newDiameterLeft1Part1_2 = CalculateNewDiameter(a4, originalScalePart1_2.x);
-        float newDiameterRight1Part1_2 = CalculateNewDiameter(a5, originalScalePart1_2.x);
-        float newDiameterLeft2Part1_2 = CalculateNewDiameter(a6, originalScalePart1_2.x);
-        float newDiameterRight2Part1_2 = CalculateNewDiameter(a7, originalScalePart1_2.x);
+        // float newDiameterGreenPart1_2 = CalculateNewDiameter(a1, originalScalePart1_2.x);
+        // float newDiameterBluePart1_2 = CalculateNewDiameter(a2, originalScalePart1_2.x);
+        // float newDiameterRedPart1_2 = CalculateNewDiameter(a3, originalScalePart1_2.x);
+        // float newDiameterLeft1Part1_2 = CalculateNewDiameter(a4, originalScalePart1_2.x);
+        // float newDiameterRight1Part1_2 = CalculateNewDiameter(a5, originalScalePart1_2.x);
+        // float newDiameterLeft2Part1_2 = CalculateNewDiameter(a6, originalScalePart1_2.x);
+        // float newDiameterRight2Part1_2 = CalculateNewDiameter(a7, originalScalePart1_2.x);
 
 
-        // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
-        float newDiameterGreenPart1_3 = CalculateNewDiameter((a1) * (b1), originalScalePart1_3.x);
-        float newDiameterBluePart1_3 = CalculateNewDiameter((a2) * (b2), originalScalePart1_3.x);
-        float newDiameterRedPart1_3 = CalculateNewDiameter((a3) * (b3), originalScalePart1_3.x);
-        float newDiameterLeft1Part1_3 = CalculateNewDiameter((a4) * (b4), originalScalePart1_3.x);
-        float newDiameterRight1Part1_3 = CalculateNewDiameter((a5) * (b5), originalScalePart1_3.x);
-        float newDiameterLeft2Part1_3 = CalculateNewDiameter((a6) * (b6), originalScalePart1_3.x);
-        float newDiameterRight2Part1_3 = CalculateNewDiameter((a7) * (b7), originalScalePart1_3.x);
+        // // Calculate new diameters based on a1, a2, a3 * b1, b2, b3 values for Part1_3 and Part2
+        // float newDiameterGreenPart1_3 = CalculateNewDiameter((a1) * (b1), originalScalePart1_3.x);
+        // float newDiameterBluePart1_3 = CalculateNewDiameter((a2) * (b2), originalScalePart1_3.x);
+        // float newDiameterRedPart1_3 = CalculateNewDiameter((a3) * (b3), originalScalePart1_3.x);
+        // float newDiameterLeft1Part1_3 = CalculateNewDiameter((a4) * (b4), originalScalePart1_3.x);
+        // float newDiameterRight1Part1_3 = CalculateNewDiameter((a5) * (b5), originalScalePart1_3.x);
+        // float newDiameterLeft2Part1_3 = CalculateNewDiameter((a6) * (b6), originalScalePart1_3.x);
+        // float newDiameterRight2Part1_3 = CalculateNewDiameter((a7) * (b7), originalScalePart1_3.x);
         
 
-        // Apply the new diameters to the respective cylinders
-        UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
-        UpdateCylinderDiameter(blueLightBeamPart1_2, newDiameterBluePart1_2);
-        UpdateCylinderDiameter(redLightBeamPart1_2, newDiameterRedPart1_2);
-        UpdateCylinderDiameter(leftLightBeamPart1_2, newDiameterLeft1Part1_2);
-        UpdateCylinderDiameter(rightLightBeamPart1_2, newDiameterRight1Part1_2);
-        UpdateCylinderDiameter(leftLightBeam2Part1_2, newDiameterLeft2Part1_2);
-        UpdateCylinderDiameter(rightLightBeam2Part1_2, newDiameterRight2Part1_2);
+        // // Apply the new diameters to the respective cylinders
+        // UpdateCylinderDiameter(greenLightBeamPart1_2, newDiameterGreenPart1_2);
+        // UpdateCylinderDiameter(blueLightBeamPart1_2, newDiameterBluePart1_2);
+        // UpdateCylinderDiameter(redLightBeamPart1_2, newDiameterRedPart1_2);
+        // UpdateCylinderDiameter(leftLightBeamPart1_2, newDiameterLeft1Part1_2);
+        // UpdateCylinderDiameter(rightLightBeamPart1_2, newDiameterRight1Part1_2);
+        // UpdateCylinderDiameter(leftLightBeam2Part1_2, newDiameterLeft2Part1_2);
+        // UpdateCylinderDiameter(rightLightBeam2Part1_2, newDiameterRight2Part1_2);
 
-        UpdateCylinderDiameter(greenLightBeamPart1_3, newDiameterGreenPart1_3);
-        UpdateCylinderDiameter(blueLightBeamPart1_3, newDiameterBluePart1_3);
-        UpdateCylinderDiameter(redLightBeamPart1_3, newDiameterRedPart1_3);
-        UpdateCylinderDiameter(leftLightBeamPart1_3, newDiameterLeft1Part1_3);
-        UpdateCylinderDiameter(rightLightBeamPart1_3, newDiameterRight1Part1_3);
-        UpdateCylinderDiameter(leftLightBeam2Part1_3, newDiameterLeft2Part1_3);
-        UpdateCylinderDiameter(rightLightBeam2Part1_3, newDiameterRight2Part1_3);
+        // UpdateCylinderDiameter(greenLightBeamPart1_3, newDiameterGreenPart1_3);
+        // UpdateCylinderDiameter(blueLightBeamPart1_3, newDiameterBluePart1_3);
+        // UpdateCylinderDiameter(redLightBeamPart1_3, newDiameterRedPart1_3);
+        // UpdateCylinderDiameter(leftLightBeamPart1_3, newDiameterLeft1Part1_3);
+        // UpdateCylinderDiameter(rightLightBeamPart1_3, newDiameterRight1Part1_3);
+        // UpdateCylinderDiameter(leftLightBeam2Part1_3, newDiameterLeft2Part1_3);
+        // UpdateCylinderDiameter(rightLightBeam2Part1_3, newDiameterRight2Part1_3);
 
 
-        UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart1_3);
-        UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart1_3);
-        UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart1_3);
-        UpdateConeBaseDiameter(leftLightBeamPart2, newDiameterLeft1Part1_3);
-        UpdateConeBaseDiameter(rightLightBeamPart2, newDiameterRight1Part1_3);
-        UpdateConeBaseDiameter(leftLightBeam2Part2, newDiameterLeft2Part1_3);
-        UpdateConeBaseDiameter(rightLightBeam2Part2, newDiameterRight2Part1_3);
+        // UpdateConeBaseDiameter(greenLightBeamPart2, newDiameterGreenPart1_3);
+        // UpdateConeBaseDiameter(blueLightBeamPart2, newDiameterBluePart1_3);
+        // UpdateConeBaseDiameter(redLightBeamPart2, newDiameterRedPart1_3);
+        // UpdateConeBaseDiameter(leftLightBeamPart2, newDiameterLeft1Part1_3);
+        // UpdateConeBaseDiameter(rightLightBeamPart2, newDiameterRight1Part1_3);
+        // UpdateConeBaseDiameter(leftLightBeam2Part2, newDiameterLeft2Part1_3);
+        // UpdateConeBaseDiameter(rightLightBeam2Part2, newDiameterRight2Part1_3);
 
         // // Get the colors of the three LightBeamPart2
         // Color greenColorPart2 = greenLightBeamPart2.GetComponent<Renderer>().material.color;

@@ -3904,6 +3904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userInput: {fileID: 1775453806}
   itemImage: {fileID: 768480267}
+  foodFigure: {fileID: 2067265849}
   film21: {fileID: 702452357}
   film22: {fileID: 1933351424}
   film23: {fileID: 2135495507}
