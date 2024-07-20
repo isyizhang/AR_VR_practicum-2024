@@ -20,6 +20,12 @@ public class Button : MonoBehaviour, Interactable
     private float longPressThreshold = 1f;
     private Coroutine longPressCoroutine;
 
+    public AudioSource audioSource;
+    public AudioClip turnOnLightClip;
+    public AudioClip turnOffLightClip;
+    public AudioClip buttonClickClip;
+    public AudioClip longPressClip;
+
     public void OnPointerDown()
     {
         if (!isInteractable) return;
@@ -31,7 +37,25 @@ public class Button : MonoBehaviour, Interactable
 
             if (lightBeam && isLightButton)
             {
-                lightBeam.SetActive(!lightBeam.activeSelf);
+                bool isLightActive = lightBeam.activeSelf;
+                lightBeam.SetActive(!isLightActive);
+                if (audioSource != null)
+                {
+                    if (!isLightActive && turnOnLightClip != null)
+                    {
+                        audioSource.PlayOneShot(turnOnLightClip);
+                    }
+                    else if (isLightActive && turnOffLightClip != null)
+                    {
+                        audioSource.PlayOneShot(turnOffLightClip);
+                    }
+                }
+            }
+            if(!isLightButton){
+                 if (audioSource != null && buttonClickClip != null)
+                {
+                    audioSource.PlayOneShot(buttonClickClip);
+                }
             }
 
             pressDuration = 0f;
@@ -78,6 +102,10 @@ public class Button : MonoBehaviour, Interactable
             if (pressDuration >= longPressThreshold)
             {
                 Debug.Log("Long press detected.");
+                if (audioSource != null && longPressClip != null)
+                {
+                    audioSource.PlayOneShot(longPressClip);
+                }
                 onLongPressEvent.Invoke();
                 yield break; // Exit the coroutine after detecting a long press
             }

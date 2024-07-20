@@ -60,7 +60,7 @@ public class Dialogue : MonoBehaviour
         else if (Value == 7)
         {
             DestroyArrow();
-            ChangeButtonText("Start over");
+            ChangeButtonText("Start Tutorial");
             Value = 0f;
         }
     }

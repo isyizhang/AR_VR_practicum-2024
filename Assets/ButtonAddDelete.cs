@@ -28,6 +28,9 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
 
     public GameObject userFigure;
     public GameObject itemFigure;
+    public AudioSource audioSource;
+    public AudioClip addClip;
+    public AudioClip deleteClip;
     public void OnPointerDown()
     {
         if (!isInteractable) return;
@@ -41,6 +44,7 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
 
                 if (isAdd)
                 {
+                    audioSource.PlayOneShot(addClip);
                     if (!lightPath1.activeSelf)
                     {
                         lightPath1.SetActive(true);
@@ -48,6 +52,7 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
                 }
                 else
                 {
+                    audioSource.PlayOneShot(deleteClip);
                     if (lightPath1.activeSelf)
                     {
                         lightPath1.SetActive(false);
@@ -63,6 +68,7 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
 
             if (isAdd)
             {
+                audioSource.PlayOneShot(addClip);
                 if (!lightPath1.activeSelf)
                 {
                     lightPath1.SetActive(true);
@@ -82,6 +88,7 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
             }
             else
             {
+                audioSource.PlayOneShot(deleteClip);
                 if (lightPath4.activeSelf)
                 {
                     lightPath4.SetActive(false);
