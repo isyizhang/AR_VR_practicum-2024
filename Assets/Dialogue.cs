@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
 {
     //private GameObject ArrowGameObject;
     public GameObject ModelTarget;
+    public bool isChallenge1 = false;
     private float Value;
     public GameObject Text1; // assign any text with the script I've made before attached
     public GameObject Text2;
@@ -19,9 +20,11 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
+        if(isChallenge1){
         Value = 1f;
         TextGuidance Script1 = Text1.GetComponent<TextGuidance>(); // Get the script of the text
         Script1.TextSetActive(Value);
+        }
     }
 
     public void AddNumber()
