@@ -35,31 +35,31 @@ public class ButtonAddDelete : MonoBehaviour, Interactable
     {
         if (!isInteractable) return;
         
-        if (isChallenge1)
-        {
-            if (!isPressed)
-            {
-                transform.position += new Vector3(0, -0.005f, 0.009f);
-                isPressed = true;
+        // if (isChallenge1)
+        // {
+        //     if (!isPressed)
+        //     {
+        //         transform.position += new Vector3(0, -0.005f, 0.009f);
+        //         isPressed = true;
 
-                if (isAdd)
-                {
-                    audioSource.PlayOneShot(addClip);
-                    if (!lightPath1.activeSelf)
-                    {
-                        lightPath1.SetActive(true);
-                    }
-                }
-                else
-                {
-                    audioSource.PlayOneShot(deleteClip);
-                    if (lightPath1.activeSelf)
-                    {
-                        lightPath1.SetActive(false);
-                    }
-                }
-            }
-        }
+        //         if (isAdd)
+        //         {
+        //             audioSource.PlayOneShot(addClip);
+        //             if (!lightPath1.activeSelf)
+        //             {
+        //                 lightPath1.SetActive(true);
+        //             }
+        //         }
+        //         else
+        //         {
+        //             audioSource.PlayOneShot(deleteClip);
+        //             if (lightPath1.activeSelf)
+        //             {
+        //                 lightPath1.SetActive(false);
+        //             }
+        //         }
+        //     }
+        // }
 
         if (!isPressed)
         {

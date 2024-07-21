@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    private GameObject ArrowGameObject;
+    //private GameObject ArrowGameObject;
     public GameObject ModelTarget;
     private float Value;
     public GameObject Text1; // assign any text with the script I've made before attached
@@ -19,7 +19,9 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-        Value = 0f;
+        Value = 1f;
+        TextGuidance Script1 = Text1.GetComponent<TextGuidance>(); // Get the script of the text
+        Script1.TextSetActive(Value);
     }
 
     public void AddNumber()
@@ -40,49 +42,63 @@ public class Dialogue : MonoBehaviour
         TextGuidance Script7 = Text7.GetComponent<TextGuidance>(); // Get the script of the text
         Script7.TextSetActive(Value); // Use the public method made in the last Scri
 
-        if (Value == 1)
-        {
-            DestroyArrow();
+        // if (Value == 1)
+        // {
+        //     DestroyArrow();
+        //     ChangeButtonText("Continue");
+        // }
+        // else if (Value == 2 || Value == 5)
+        // {
+        //     ShowArrowAt(-0.1f, -0.05f, 0.075f);
+        // }
+        // else if (Value == 4)
+        // {
+        //     ShowArrowAt(-0.1f, -0.3f, 0.075f);
+        // }
+        // else if (Value == 3 || Value == 6)
+        // {
+        //     ShowArrowAt(-0.1f, -0.2f, 0.075f);
+        // }
+        // else if (Value == 7)
+        // {
+        //     DestroyArrow();
+        //     ChangeButtonText("End Tutorial");
+        //     Value = -1f;
+        // }else if (Value == 0){
+        //     ChangeButtonText("Start Tutorial");
+        // }
+
+        if(Value == 0){
+            ChangeButtonText("Start Tutorial");
+        }
+        else if(Value == 1){
             ChangeButtonText("Continue");
-        }
-        else if (Value == 2 || Value == 5)
-        {
-            ShowArrowAt(-0.1f, -0.05f, 0.075f);
-        }
-        else if (Value == 4)
-        {
-            ShowArrowAt(-0.1f, -0.3f, 0.075f);
-        }
-        else if (Value == 3 || Value == 6)
-        {
-            ShowArrowAt(-0.1f, -0.2f, 0.075f);
         }
         else if (Value == 7)
         {
-            DestroyArrow();
-            ChangeButtonText("Start Tutorial");
-            Value = 0f;
+            ChangeButtonText("End Tutorial");
+            Value = -1f;
         }
     }
 
-    private void ShowArrowAt(float x, float y, float z)
-    {
-        DestroyArrow();
-        var arrow = Resources.Load<GameObject>("Arrow");
-        ArrowGameObject = Instantiate(arrow) as GameObject;
-        ArrowGameObject.transform.SetParent(ModelTarget.transform);
-        ArrowGameObject.transform.localPosition = new Vector3(x, y, z);
-        ArrowGameObject.transform.localRotation = Quaternion.Euler(0, -90, -90);
-    }
+    // private void ShowArrowAt(float x, float y, float z)
+    // {
+    //     DestroyArrow();
+    //     var arrow = Resources.Load<GameObject>("Arrow");
+    //     ArrowGameObject = Instantiate(arrow) as GameObject;
+    //     ArrowGameObject.transform.SetParent(ModelTarget.transform);
+    //     ArrowGameObject.transform.localPosition = new Vector3(x, y, z);
+    //     ArrowGameObject.transform.localRotation = Quaternion.Euler(0, -90, -90);
+    // }
 
-    private void DestroyArrow()
-    {
-        var preArrow = GameObject.Find("Arrow(Clone)");
-        if (preArrow != null)
-        {
-            GameObject.Destroy(preArrow);
-        }
-    }
+    // private void DestroyArrow()
+    // {
+    //     var preArrow = GameObject.Find("Arrow(Clone)");
+    //     if (preArrow != null)
+    //     {
+    //         GameObject.Destroy(preArrow);
+    //     }
+    // }
 
     private void ChangeButtonText(string txt)
     {
