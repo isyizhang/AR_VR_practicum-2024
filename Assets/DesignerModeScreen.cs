@@ -423,20 +423,44 @@ public class DesignerModeScreen : MonoBehaviour
         Color lightdotColor = lightDot.color;
         Color itemImageColor = itemImage.color;
 
-        if(isChallenge1){
-            lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a + left1ColorPart2.a - 0.1f));
-            lightDot.color = lightdotColor;
-            itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a + left1ColorPart2.a - 0.1f));
-            itemImage.color = itemImageColor;
-        }else {
-            // Calculate the average alpha value
-            float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a +
+        // if(isChallenge1){
+        //     lightdotColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a + left1ColorPart2.a - 0.1f));
+        //     lightDot.color = lightdotColor;
+        //     itemImageColor.a = Mathf.Min(1, Mathf.Max(0, greenColorPart2.a + blueColorPart2.a + redColorPart2.a + left1ColorPart2.a - 0.1f));
+        //     itemImage.color = itemImageColor;
+        // }else {
+        //     // Calculate the average alpha value
+        //     float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a +
+        //                     left1ColorPart2.a + right1ColorPart2.a + left2ColorPart2.a + right2ColorPart2.a;
+        //     float averageAlpha = totalAlpha / 3.2f;
+
+        //     // Clamp the average alpha value
+        //     //float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha - 0.3f));
+        //     float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
+
+        //     // Change the color of lightDot
+        //     //Color lightdotColor = lightDot.color;
+        //     lightdotColor.a = clampedAlpha;
+        //     lightDot.color = lightdotColor;
+
+        //     // Change the color of itemImage
+        //     //Color itemImageColor = itemImage.color;
+        //     itemImageColor.a = clampedAlpha;
+        //     itemImage.color = itemImageColor;
+        // }
+        float totalAlpha = greenColorPart2.a + blueColorPart2.a + redColorPart2.a +
                             left1ColorPart2.a + right1ColorPart2.a + left2ColorPart2.a + right2ColorPart2.a;
             float averageAlpha = totalAlpha / 3.2f;
+            float clampedAlpha = 0f;
+            if (averageAlpha < 0.1f){
+                clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
+            } else{
+                clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha + 0.3f));
+            }
 
             // Clamp the average alpha value
             //float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha - 0.3f));
-            float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
+            //float clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha + 0.3f));
 
             // Change the color of lightDot
             //Color lightdotColor = lightDot.color;
@@ -447,7 +471,6 @@ public class DesignerModeScreen : MonoBehaviour
             //Color itemImageColor = itemImage.color;
             itemImageColor.a = clampedAlpha;
             itemImage.color = itemImageColor;
-        }
         
     }
 

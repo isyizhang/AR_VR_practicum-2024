@@ -31,12 +31,12 @@ public class ChallengeCompleteListener : MonoBehaviour
         {
             Color color = itemImage.color;
             float alpha = color.a;
-             if(alpha <= 150f / 255f){
+             if(alpha <= 170f / 255f){
                 hasPlayedSound = false;
              }
 
             // Check if the alpha value exceeds the threshold
-            if (alpha >= 160f / 255f && alpha <= 180f /255f && !hasPlayedSound)
+            if (alpha >= 170f / 255f && alpha <= 190f /255f && !hasPlayedSound)
             {
                 PlayCompleteClip();
                 hasPlayedSound = true;
