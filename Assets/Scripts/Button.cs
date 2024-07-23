@@ -15,6 +15,7 @@ public class Button : MonoBehaviour, Interactable
     public bool isLightButton;
     private bool isPressed = false;
     public bool isInteractable = true;
+    //public bool isChallenge1 = false;
 
     private float pressDuration = 0f;
     private float longPressThreshold = 1f;
@@ -102,7 +103,7 @@ public class Button : MonoBehaviour, Interactable
             if (pressDuration >= longPressThreshold)
             {
                 Debug.Log("Long press detected.");
-                if (audioSource != null && longPressClip != null)
+                if (audioSource != null && longPressClip != null && IsChallengeManager.isChallenge1)
                 {
                     audioSource.PlayOneShot(longPressClip);
                 }
@@ -140,7 +141,7 @@ public class Button : MonoBehaviour, Interactable
     public void AddLongPressListener(UnityAction call)
     {
         if (!isInteractable) return;
+        if(!IsChallengeManager.isChallenge1) return;
         this.onLongPressEvent.AddListener(call);
     }
-
 }

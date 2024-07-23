@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Main_scene");
+        IsChallengeManager.SetChallenge1State(false);
     }
 
     //Main Menu Controller
@@ -16,16 +17,19 @@ public class MainMenu : MonoBehaviour
     public void LoadMainScene()
     {
         SceneManager.LoadSceneAsync("Main_scene");
+        IsChallengeManager.SetChallenge1State(false);
     }
 
     public void LoadScene1()
     {
         SceneManager.LoadSceneAsync("UserScene1");
+        IsChallengeManager.SetChallenge1State(false);
     }
 
     public void LoadScene2()
     {
         SceneManager.LoadSceneAsync("Challenge1");
+        IsChallengeManager.SetChallenge1State(true);
     }
 
     public void ExitGame()

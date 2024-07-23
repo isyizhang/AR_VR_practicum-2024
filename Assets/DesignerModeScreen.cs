@@ -455,7 +455,7 @@ public class DesignerModeScreen : MonoBehaviour
             if (averageAlpha < 0.1f){
                 clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha));
             } else{
-                clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha + 0.3f));
+                clampedAlpha = Mathf.Min(1, Mathf.Max(0, averageAlpha + 0.4f));
             }
 
             // Clamp the average alpha value
@@ -470,8 +470,7 @@ public class DesignerModeScreen : MonoBehaviour
             // Change the color of itemImage
             //Color itemImageColor = itemImage.color;
             itemImageColor.a = clampedAlpha;
-            itemImage.color = itemImageColor;
-        
+            itemImage.color = itemImageColor;  
     }
 
     private float DotProduct(float a1, float a2, float a3, float a4, float a5, float a6, float a7, float b1, float b2, float b3, float b4, float b5, float b6, float b7)
